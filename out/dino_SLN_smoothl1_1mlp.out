@@ -1,0 +1,632 @@
+Steps 1 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+lr为0.0001
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+[2023-05-21 10:57:49.727252] [Steps     200] [G 0.0275797]
+Steps 201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:03:27.504866] [Steps     400] [G 0.0192050]
+Steps 401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:09:05.740121] [Steps     600] [G 0.0165534]
+Steps 601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:14:42.397455] [Steps     800] [G 0.0135056]
+Steps 801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:20:20.393836] [Steps    1000] [G 0.0167367]
+Steps 1001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:25:58.156599] [Steps    1200] [G 0.0128887]
+Steps 1201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:31:33.703772] [Steps    1400] [G 0.0151986]
+Steps 1401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:37:10.809385] [Steps    1600] [G 0.0138419]
+Steps 1601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:42:47.908323] [Steps    1800] [G 0.0091527]
+Steps 1801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:48:24.396511] [Steps    2000] [G 0.0086312]
+Steps 2001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:54:01.936076] [Steps    2200] [G 0.0107497]
+Steps 2201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 11:59:39.866771] [Steps    2400] [G 0.0112465]
+Steps 2401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:05:16.788192] [Steps    2600] [G 0.0125206]
+Steps 2601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:10:55.038894] [Steps    2800] [G 0.0090738]
+Steps 2801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:16:33.414314] [Steps    3000] [G 0.0104327]
+Steps 3001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:22:09.703578] [Steps    3200] [G 0.0097613]
+Steps 3201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:27:47.474565] [Steps    3400] [G 0.0104233]
+Steps 3401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:33:26.110038] [Steps    3600] [G 0.0055824]
+Steps 3601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:39:03.172028] [Steps    3800] [G 0.0047940]
+Steps 3801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:44:41.628083] [Steps    4000] [G 0.0075281]
+Steps 4001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:50:19.931844] [Steps    4200] [G 0.0072087]
+Steps 4201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 12:55:56.523786] [Steps    4400] [G 0.0084446]
+Steps 4401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:01:34.501450] [Steps    4600] [G 0.0075424]
+Steps 4601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:07:12.913806] [Steps    4800] [G 0.0054127]
+Steps 4801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:12:48.896016] [Steps    5000] [G 0.0069251]
+Steps 5001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:18:26.886725] [Steps    5200] [G 0.0073797]
+Steps 5201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:24:04.997856] [Steps    5400] [G 0.0064384]
+Steps 5401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:29:41.600816] [Steps    5600] [G 0.0071945]
+Steps 5601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:35:20.064214] [Steps    5800] [G 0.0071329]
+Steps 5801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:40:58.143341] [Steps    6000] [G 0.0067020]
+Steps 6001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:46:34.918206] [Steps    6200] [G 0.0055301]
+Steps 6201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:52:13.058256] [Steps    6400] [G 0.0054997]
+Steps 6401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 13:57:51.529125] [Steps    6600] [G 0.0071919]
+Steps 6601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:03:28.693708] [Steps    6800] [G 0.0070683]
+Steps 6801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:09:06.529174] [Steps    7000] [G 0.0047315]
+Steps 7001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:14:44.507694] [Steps    7200] [G 0.0083241]
+Steps 7201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:20:21.021756] [Steps    7400] [G 0.0074878]
+Steps 7401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:25:59.164641] [Steps    7600] [G 0.0049330]
+Steps 7601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:31:37.286149] [Steps    7800] [G 0.0058583]
+Steps 7801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:37:13.911477] [Steps    8000] [G 0.0075839]
+Steps 8001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:42:52.416181] [Steps    8200] [G 0.0050805]
+Steps 8201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:48:30.891678] [Steps    8400] [G 0.0055144]
+Steps 8401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:54:07.771112] [Steps    8600] [G 0.0083336]
+Steps 8601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 14:59:45.970562] [Steps    8800] [G 0.0040620]
+Steps 8801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:05:24.231766] [Steps    9000] [G 0.0060455]
+Steps 9001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+get_dataset(dataset=options['dataset'])为(<datasets.MyColorTransferImageDataset1 object at 0x7fe1a67dfc90>, (128, 128, 3))
+Since no pretrained weights have been provided, we load the reference pretrained DINO weights.
+generator的预训练参数加载结果为_IncompatibleKeys(missing_keys=['style.1.weight', 'style.1.bias', 'blocks.0.norm1.mlp_gamma.weight', 'blocks.0.norm1.mlp_gamma.bias', 'blocks.0.norm1.mlp_beta.weight', 'blocks.0.norm1.mlp_beta.bias', 'blocks.0.norm2.mlp_gamma.weight', 'blocks.0.norm2.mlp_gamma.bias', 'blocks.0.norm2.mlp_beta.weight', 'blocks.0.norm2.mlp_beta.bias', 'blocks.0.skip.weight', 'blocks.0.skip.bias', 'blocks.1.norm1.mlp_gamma.weight', 'blocks.1.norm1.mlp_gamma.bias', 'blocks.1.norm1.mlp_beta.weight', 'blocks.1.norm1.mlp_beta.bias', 'blocks.1.norm2.mlp_gamma.weight', 'blocks.1.norm2.mlp_gamma.bias', 'blocks.1.norm2.mlp_beta.weight', 'blocks.1.norm2.mlp_beta.bias', 'blocks.1.skip.weight', 'blocks.1.skip.bias', 'blocks.2.norm1.mlp_gamma.weight', 'blocks.2.norm1.mlp_gamma.bias', 'blocks.2.norm1.mlp_beta.weight', 'blocks.2.norm1.mlp_beta.bias', 'blocks.2.norm2.mlp_gamma.weight', 'blocks.2.norm2.mlp_gamma.bias', 'blocks.2.norm2.mlp_beta.weight', 'blocks.2.norm2.mlp_beta.bias', 'blocks.2.skip.weight', 'blocks.2.skip.bias', 'blocks.3.norm1.mlp_gamma.weight', 'blocks.3.norm1.mlp_gamma.bias', 'blocks.3.norm1.mlp_beta.weight', 'blocks.3.norm1.mlp_beta.bias', 'blocks.3.norm2.mlp_gamma.weight', 'blocks.3.norm2.mlp_gamma.bias', 'blocks.3.norm2.mlp_beta.weight', 'blocks.3.norm2.mlp_beta.bias', 'blocks.3.skip.weight', 'blocks.3.skip.bias', 'blocks.4.norm1.mlp_gamma.weight', 'blocks.4.norm1.mlp_gamma.bias', 'blocks.4.norm1.mlp_beta.weight', 'blocks.4.norm1.mlp_beta.bias', 'blocks.4.norm2.mlp_gamma.weight', 'blocks.4.norm2.mlp_gamma.bias', 'blocks.4.norm2.mlp_beta.weight', 'blocks.4.norm2.mlp_beta.bias', 'blocks.4.skip.weight', 'blocks.4.skip.bias', 'blocks.5.norm1.mlp_gamma.weight', 'blocks.5.norm1.mlp_gamma.bias', 'blocks.5.norm1.mlp_beta.weight', 'blocks.5.norm1.mlp_beta.bias', 'blocks.5.norm2.mlp_gamma.weight', 'blocks.5.norm2.mlp_gamma.bias', 'blocks.5.norm2.mlp_beta.weight', 'blocks.5.norm2.mlp_beta.bias', 'blocks.5.skip.weight', 'blocks.5.skip.bias', 'blocks.6.norm1.mlp_gamma.weight', 'blocks.6.norm1.mlp_gamma.bias', 'blocks.6.norm1.mlp_beta.weight', 'blocks.6.norm1.mlp_beta.bias', 'blocks.6.norm2.mlp_gamma.weight', 'blocks.6.norm2.mlp_gamma.bias', 'blocks.6.norm2.mlp_beta.weight', 'blocks.6.norm2.mlp_beta.bias', 'blocks.6.skip.weight', 'blocks.6.skip.bias', 'convs.0.conv.weight', 'convs.0.conv.blur.kernel', 'convs.0.conv.modulation.weight', 'convs.0.conv.modulation.bias', 'convs.0.noise.weight', 'convs.0.activate.bias', 'convs.1.conv.weight', 'convs.1.conv.modulation.weight', 'convs.1.conv.modulation.bias', 'convs.1.noise.weight', 'convs.1.activate.bias', 'convs.2.conv.weight', 'convs.2.conv.blur.kernel', 'convs.2.conv.modulation.weight', 'convs.2.conv.modulation.bias', 'convs.2.noise.weight', 'convs.2.activate.bias', 'convs.3.conv.weight', 'convs.3.conv.modulation.weight', 'convs.3.conv.modulation.bias', 'convs.3.noise.weight', 'convs.3.activate.bias', 'convs.4.conv.weight', 'convs.4.conv.blur.kernel', 'convs.4.conv.modulation.weight', 'convs.4.conv.modulation.bias', 'convs.4.noise.weight', 'convs.4.activate.bias', 'convs.5.conv.weight', 'convs.5.conv.modulation.weight', 'convs.5.conv.modulation.bias', 'convs.5.noise.weight', 'convs.5.activate.bias', 'convs.6.conv.weight', 'convs.6.conv.blur.kernel', 'convs.6.conv.modulation.weight', 'convs.6.conv.modulation.bias', 'convs.6.noise.weight', 'convs.6.activate.bias', 'convs.7.conv.weight', 'convs.7.conv.modulation.weight', 'convs.7.conv.modulation.bias', 'convs.7.noise.weight', 'convs.7.activate.bias', 'convs.8.conv.weight', 'convs.8.conv.modulation.weight', 'convs.8.conv.modulation.bias', 'convs.8.noise.weight', 'convs.8.activate.bias', 'convs.9.conv.weight', 'convs.9.conv.modulation.weight', 'convs.9.conv.modulation.bias', 'convs.9.noise.weight', 'convs.9.activate.bias', 'convs.10.conv.weight', 'convs.10.conv.modulation.weight', 'convs.10.conv.modulation.bias', 'convs.10.noise.weight', 'convs.10.activate.bias', 'convs.11.conv.weight', 'convs.11.conv.modulation.weight', 'convs.11.conv.modulation.bias', 'convs.11.noise.weight', 'convs.11.activate.bias', 'convs.12.conv.weight', 'convs.12.conv.modulation.weight', 'convs.12.conv.modulation.bias', 'convs.12.noise.weight', 'convs.12.activate.bias', 'convs.13.conv.weight', 'convs.13.conv.modulation.weight', 'convs.13.conv.modulation.bias', 'convs.13.noise.weight', 'convs.13.activate.bias', 'convs.14.conv.weight', 'convs.14.conv.modulation.weight', 'convs.14.conv.modulation.bias', 'convs.14.noise.weight', 'convs.14.activate.bias', 'convs.15.conv.weight', 'convs.15.conv.modulation.weight', 'convs.15.conv.modulation.bias', 'convs.15.noise.weight', 'convs.15.activate.bias', 'to_rgb.bias', 'to_rgb.conv.weight', 'to_rgb.conv.modulation.weight', 'to_rgb.conv.modulation.bias', 'norm.mlp_gamma.weight', 'norm.mlp_gamma.bias', 'norm.mlp_beta.weight', 'norm.mlp_beta.bias', 'mid.weight', 'mid.bias'], unexpected_keys=['blocks.7.norm1.weight', 'blocks.7.norm1.bias', 'blocks.7.attn.qkv.weight', 'blocks.7.attn.qkv.bias', 'blocks.7.attn.proj.weight', 'blocks.7.attn.proj.bias', 'blocks.7.norm2.weight', 'blocks.7.norm2.bias', 'blocks.7.mlp.fc1.weight', 'blocks.7.mlp.fc1.bias', 'blocks.7.mlp.fc2.weight', 'blocks.7.mlp.fc2.bias', 'blocks.8.norm1.weight', 'blocks.8.norm1.bias', 'blocks.8.attn.qkv.weight', 'blocks.8.attn.qkv.bias', 'blocks.8.attn.proj.weight', 'blocks.8.attn.proj.bias', 'blocks.8.norm2.weight', 'blocks.8.norm2.bias', 'blocks.8.mlp.fc1.weight', 'blocks.8.mlp.fc1.bias', 'blocks.8.mlp.fc2.weight', 'blocks.8.mlp.fc2.bias', 'blocks.9.norm1.weight', 'blocks.9.norm1.bias', 'blocks.9.attn.qkv.weight', 'blocks.9.attn.qkv.bias', 'blocks.9.attn.proj.weight', 'blocks.9.attn.proj.bias', 'blocks.9.norm2.weight', 'blocks.9.norm2.bias', 'blocks.9.mlp.fc1.weight', 'blocks.9.mlp.fc1.bias', 'blocks.9.mlp.fc2.weight', 'blocks.9.mlp.fc2.bias', 'blocks.10.norm1.weight', 'blocks.10.norm1.bias', 'blocks.10.attn.qkv.weight', 'blocks.10.attn.qkv.bias', 'blocks.10.attn.proj.weight', 'blocks.10.attn.proj.bias', 'blocks.10.norm2.weight', 'blocks.10.norm2.bias', 'blocks.10.mlp.fc1.weight', 'blocks.10.mlp.fc1.bias', 'blocks.10.mlp.fc2.weight', 'blocks.10.mlp.fc2.bias', 'blocks.11.norm1.weight', 'blocks.11.norm1.bias', 'blocks.11.attn.qkv.weight', 'blocks.11.attn.qkv.bias', 'blocks.11.attn.proj.weight', 'blocks.11.attn.proj.bias', 'blocks.11.norm2.weight', 'blocks.11.norm2.bias', 'blocks.11.mlp.fc1.weight', 'blocks.11.mlp.fc1.bias', 'blocks.11.mlp.fc2.weight', 'blocks.11.mlp.fc2.bias', 'blocks.0.norm1.weight', 'blocks.0.norm1.bias', 'blocks.0.norm2.weight', 'blocks.0.norm2.bias', 'blocks.1.norm1.weight', 'blocks.1.norm1.bias', 'blocks.1.norm2.weight', 'blocks.1.norm2.bias', 'blocks.2.norm1.weight', 'blocks.2.norm1.bias', 'blocks.2.norm2.weight', 'blocks.2.norm2.bias', 'blocks.3.norm1.weight', 'blocks.3.norm1.bias', 'blocks.3.norm2.weight', 'blocks.3.norm2.bias', 'blocks.4.norm1.weight', 'blocks.4.norm1.bias', 'blocks.4.norm2.weight', 'blocks.4.norm2.bias', 'blocks.5.norm1.weight', 'blocks.5.norm1.bias', 'blocks.5.norm2.weight', 'blocks.5.norm2.bias', 'blocks.6.norm1.weight', 'blocks.6.norm1.bias', 'blocks.6.norm2.weight', 'blocks.6.norm2.bias', 'norm.weight', 'norm.bias'])
+g_ema的预训练参数加载结果为_IncompatibleKeys(missing_keys=['style.1.weight', 'style.1.bias', 'blocks.0.norm1.mlp_gamma.weight', 'blocks.0.norm1.mlp_gamma.bias', 'blocks.0.norm1.mlp_beta.weight', 'blocks.0.norm1.mlp_beta.bias', 'blocks.0.norm2.mlp_gamma.weight', 'blocks.0.norm2.mlp_gamma.bias', 'blocks.0.norm2.mlp_beta.weight', 'blocks.0.norm2.mlp_beta.bias', 'blocks.0.skip.weight', 'blocks.0.skip.bias', 'blocks.1.norm1.mlp_gamma.weight', 'blocks.1.norm1.mlp_gamma.bias', 'blocks.1.norm1.mlp_beta.weight', 'blocks.1.norm1.mlp_beta.bias', 'blocks.1.norm2.mlp_gamma.weight', 'blocks.1.norm2.mlp_gamma.bias', 'blocks.1.norm2.mlp_beta.weight', 'blocks.1.norm2.mlp_beta.bias', 'blocks.1.skip.weight', 'blocks.1.skip.bias', 'blocks.2.norm1.mlp_gamma.weight', 'blocks.2.norm1.mlp_gamma.bias', 'blocks.2.norm1.mlp_beta.weight', 'blocks.2.norm1.mlp_beta.bias', 'blocks.2.norm2.mlp_gamma.weight', 'blocks.2.norm2.mlp_gamma.bias', 'blocks.2.norm2.mlp_beta.weight', 'blocks.2.norm2.mlp_beta.bias', 'blocks.2.skip.weight', 'blocks.2.skip.bias', 'blocks.3.norm1.mlp_gamma.weight', 'blocks.3.norm1.mlp_gamma.bias', 'blocks.3.norm1.mlp_beta.weight', 'blocks.3.norm1.mlp_beta.bias', 'blocks.3.norm2.mlp_gamma.weight', 'blocks.3.norm2.mlp_gamma.bias', 'blocks.3.norm2.mlp_beta.weight', 'blocks.3.norm2.mlp_beta.bias', 'blocks.3.skip.weight', 'blocks.3.skip.bias', 'blocks.4.norm1.mlp_gamma.weight', 'blocks.4.norm1.mlp_gamma.bias', 'blocks.4.norm1.mlp_beta.weight', 'blocks.4.norm1.mlp_beta.bias', 'blocks.4.norm2.mlp_gamma.weight', 'blocks.4.norm2.mlp_gamma.bias', 'blocks.4.norm2.mlp_beta.weight', 'blocks.4.norm2.mlp_beta.bias', 'blocks.4.skip.weight', 'blocks.4.skip.bias', 'blocks.5.norm1.mlp_gamma.weight', 'blocks.5.norm1.mlp_gamma.bias', 'blocks.5.norm1.mlp_beta.weight', 'blocks.5.norm1.mlp_beta.bias', 'blocks.5.norm2.mlp_gamma.weight', 'blocks.5.norm2.mlp_gamma.bias', 'blocks.5.norm2.mlp_beta.weight', 'blocks.5.norm2.mlp_beta.bias', 'blocks.5.skip.weight', 'blocks.5.skip.bias', 'blocks.6.norm1.mlp_gamma.weight', 'blocks.6.norm1.mlp_gamma.bias', 'blocks.6.norm1.mlp_beta.weight', 'blocks.6.norm1.mlp_beta.bias', 'blocks.6.norm2.mlp_gamma.weight', 'blocks.6.norm2.mlp_gamma.bias', 'blocks.6.norm2.mlp_beta.weight', 'blocks.6.norm2.mlp_beta.bias', 'blocks.6.skip.weight', 'blocks.6.skip.bias', 'convs.0.conv.weight', 'convs.0.conv.blur.kernel', 'convs.0.conv.modulation.weight', 'convs.0.conv.modulation.bias', 'convs.0.noise.weight', 'convs.0.activate.bias', 'convs.1.conv.weight', 'convs.1.conv.modulation.weight', 'convs.1.conv.modulation.bias', 'convs.1.noise.weight', 'convs.1.activate.bias', 'convs.2.conv.weight', 'convs.2.conv.blur.kernel', 'convs.2.conv.modulation.weight', 'convs.2.conv.modulation.bias', 'convs.2.noise.weight', 'convs.2.activate.bias', 'convs.3.conv.weight', 'convs.3.conv.modulation.weight', 'convs.3.conv.modulation.bias', 'convs.3.noise.weight', 'convs.3.activate.bias', 'convs.4.conv.weight', 'convs.4.conv.blur.kernel', 'convs.4.conv.modulation.weight', 'convs.4.conv.modulation.bias', 'convs.4.noise.weight', 'convs.4.activate.bias', 'convs.5.conv.weight', 'convs.5.conv.modulation.weight', 'convs.5.conv.modulation.bias', 'convs.5.noise.weight', 'convs.5.activate.bias', 'convs.6.conv.weight', 'convs.6.conv.blur.kernel', 'convs.6.conv.modulation.weight', 'convs.6.conv.modulation.bias', 'convs.6.noise.weight', 'convs.6.activate.bias', 'convs.7.conv.weight', 'convs.7.conv.modulation.weight', 'convs.7.conv.modulation.bias', 'convs.7.noise.weight', 'convs.7.activate.bias', 'convs.8.conv.weight', 'convs.8.conv.modulation.weight', 'convs.8.conv.modulation.bias', 'convs.8.noise.weight', 'convs.8.activate.bias', 'convs.9.conv.weight', 'convs.9.conv.modulation.weight', 'convs.9.conv.modulation.bias', 'convs.9.noise.weight', 'convs.9.activate.bias', 'convs.10.conv.weight', 'convs.10.conv.modulation.weight', 'convs.10.conv.modulation.bias', 'convs.10.noise.weight', 'convs.10.activate.bias', 'convs.11.conv.weight', 'convs.11.conv.modulation.weight', 'convs.11.conv.modulation.bias', 'convs.11.noise.weight', 'convs.11.activate.bias', 'convs.12.conv.weight', 'convs.12.conv.modulation.weight', 'convs.12.conv.modulation.bias', 'convs.12.noise.weight', 'convs.12.activate.bias', 'convs.13.conv.weight', 'convs.13.conv.modulation.weight', 'convs.13.conv.modulation.bias', 'convs.13.noise.weight', 'convs.13.activate.bias', 'convs.14.conv.weight', 'convs.14.conv.modulation.weight', 'convs.14.conv.modulation.bias', 'convs.14.noise.weight', 'convs.14.activate.bias', 'convs.15.conv.weight', 'convs.15.conv.modulation.weight', 'convs.15.conv.modulation.bias', 'convs.15.noise.weight', 'convs.15.activate.bias', 'to_rgb.bias', 'to_rgb.conv.weight', 'to_rgb.conv.modulation.weight', 'to_rgb.conv.modulation.bias', 'norm.mlp_gamma.weight', 'norm.mlp_gamma.bias', 'norm.mlp_beta.weight', 'norm.mlp_beta.bias', 'mid.weight', 'mid.bias'], unexpected_keys=['blocks.7.norm1.weight', 'blocks.7.norm1.bias', 'blocks.7.attn.qkv.weight', 'blocks.7.attn.qkv.bias', 'blocks.7.attn.proj.weight', 'blocks.7.attn.proj.bias', 'blocks.7.norm2.weight', 'blocks.7.norm2.bias', 'blocks.7.mlp.fc1.weight', 'blocks.7.mlp.fc1.bias', 'blocks.7.mlp.fc2.weight', 'blocks.7.mlp.fc2.bias', 'blocks.8.norm1.weight', 'blocks.8.norm1.bias', 'blocks.8.attn.qkv.weight', 'blocks.8.attn.qkv.bias', 'blocks.8.attn.proj.weight', 'blocks.8.attn.proj.bias', 'blocks.8.norm2.weight', 'blocks.8.norm2.bias', 'blocks.8.mlp.fc1.weight', 'blocks.8.mlp.fc1.bias', 'blocks.8.mlp.fc2.weight', 'blocks.8.mlp.fc2.bias', 'blocks.9.norm1.weight', 'blocks.9.norm1.bias', 'blocks.9.attn.qkv.weight', 'blocks.9.attn.qkv.bias', 'blocks.9.attn.proj.weight', 'blocks.9.attn.proj.bias', 'blocks.9.norm2.weight', 'blocks.9.norm2.bias', 'blocks.9.mlp.fc1.weight', 'blocks.9.mlp.fc1.bias', 'blocks.9.mlp.fc2.weight', 'blocks.9.mlp.fc2.bias', 'blocks.10.norm1.weight', 'blocks.10.norm1.bias', 'blocks.10.attn.qkv.weight', 'blocks.10.attn.qkv.bias', 'blocks.10.attn.proj.weight', 'blocks.10.attn.proj.bias', 'blocks.10.norm2.weight', 'blocks.10.norm2.bias', 'blocks.10.mlp.fc1.weight', 'blocks.10.mlp.fc1.bias', 'blocks.10.mlp.fc2.weight', 'blocks.10.mlp.fc2.bias', 'blocks.11.norm1.weight', 'blocks.11.norm1.bias', 'blocks.11.attn.qkv.weight', 'blocks.11.attn.qkv.bias', 'blocks.11.attn.proj.weight', 'blocks.11.attn.proj.bias', 'blocks.11.norm2.weight', 'blocks.11.norm2.bias', 'blocks.11.mlp.fc1.weight', 'blocks.11.mlp.fc1.bias', 'blocks.11.mlp.fc2.weight', 'blocks.11.mlp.fc2.bias', 'blocks.0.norm1.weight', 'blocks.0.norm1.bias', 'blocks.0.norm2.weight', 'blocks.0.norm2.bias', 'blocks.1.norm1.weight', 'blocks.1.norm1.bias', 'blocks.1.norm2.weight', 'blocks.1.norm2.bias', 'blocks.2.norm1.weight', 'blocks.2.norm1.bias', 'blocks.2.norm2.weight', 'blocks.2.norm2.bias', 'blocks.3.norm1.weight', 'blocks.3.norm1.bias', 'blocks.3.norm2.weight', 'blocks.3.norm2.bias', 'blocks.4.norm1.weight', 'blocks.4.norm1.bias', 'blocks.4.norm2.weight', 'blocks.4.norm2.bias', 'blocks.5.norm1.weight', 'blocks.5.norm1.bias', 'blocks.5.norm2.weight', 'blocks.5.norm2.bias', 'blocks.6.norm1.weight', 'blocks.6.norm1.bias', 'blocks.6.norm2.weight', 'blocks.6.norm2.bias', 'norm.weight', 'norm.bias'])
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+generator的train1参数加载结果为<All keys matched successfully>
+g_ema的train1参数加载结果为<All keys matched successfully>
+[2023-05-21 15:11:36.804814] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+[2023-05-21 15:11:36.804850] Use G moving average: 0.9999778195362122
+Steps 9001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+lr为0.0001
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+[2023-05-21 15:17:25.509235] [Steps    9200] [G 0.0045308]
+Steps 9201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:23:07.253065] [Steps    9400] [G 0.0039949]
+Steps 9401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:28:49.396578] [Steps    9600] [G 0.0059742]
+Steps 9601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:34:30.511939] [Steps    9800] [G 0.0049181]
+Steps 9801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:40:12.379465] [Steps   10000] [G 0.0060646]
+Steps 10001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:45:53.762336] [Steps   10200] [G 0.0053223]
+Steps 10201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:51:34.275263] [Steps   10400] [G 0.0075613]
+Steps 10401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 15:57:16.271151] [Steps   10600] [G 0.0079624]
+Steps 10601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:02:58.351817] [Steps   10800] [G 0.0039371]
+Steps 10801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:08:38.515740] [Steps   11000] [G 0.0040138]
+Steps 11001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:14:19.980365] [Steps   11200] [G 0.0045083]
+Steps 11201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:20:01.996208] [Steps   11400] [G 0.0057590]
+Steps 11401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:25:41.827262] [Steps   11600] [G 0.0060345]
+Steps 11601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:31:23.587801] [Steps   11800] [G 0.0053852]
+Steps 11801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:37:05.152176] [Steps   12000] [G 0.0050847]
+Steps 12001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:42:45.399122] [Steps   12200] [G 0.0057642]
+Steps 12201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:48:27.026422] [Steps   12400] [G 0.0053422]
+Steps 12401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:54:08.716151] [Steps   12600] [G 0.0031674]
+Steps 12601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 16:59:49.088432] [Steps   12800] [G 0.0031235]
+Steps 12801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:05:30.891545] [Steps   13000] [G 0.0040971]
+Steps 13001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:11:12.754429] [Steps   13200] [G 0.0047364]
+Steps 13201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:16:53.740959] [Steps   13400] [G 0.0052656]
+Steps 13401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:22:36.437388] [Steps   13600] [G 0.0046071]
+Steps 13601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:28:19.289919] [Steps   13800] [G 0.0038533]
+Steps 13801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:34:00.190393] [Steps   14000] [G 0.0058866]
+Steps 14001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:39:42.813793] [Steps   14200] [G 0.0048827]
+Steps 14201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:45:24.952068] [Steps   14400] [G 0.0043179]
+Steps 14401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:51:05.123148] [Steps   14600] [G 0.0047516]
+Steps 14601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 17:56:46.913734] [Steps   14800] [G 0.0051685]
+Steps 14801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:02:29.181676] [Steps   15000] [G 0.0044227]
+Steps 15001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:08:09.545758] [Steps   15200] [G 0.0046531]
+Steps 15201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:13:51.467257] [Steps   15400] [G 0.0042412]
+Steps 15401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:19:33.736822] [Steps   15600] [G 0.0051058]
+Steps 15601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:25:14.127320] [Steps   15800] [G 0.0062135]
+Steps 15801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:30:56.160727] [Steps   16000] [G 0.0034059]
+Steps 16001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:36:37.609505] [Steps   16200] [G 0.0045423]
+Steps 16201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:42:18.089331] [Steps   16400] [G 0.0056017]
+Steps 16401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:48:00.032165] [Steps   16600] [G 0.0030497]
+Steps 16601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:53:42.719620] [Steps   16800] [G 0.0036157]
+Steps 16801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 18:59:22.089913] [Steps   17000] [G 0.0042756]
+Steps 17001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:05:03.779732] [Steps   17200] [G 0.0035411]
+Steps 17201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:10:45.792260] [Steps   17400] [G 0.0040559]
+Steps 17401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:16:26.840184] [Steps   17600] [G 0.0052547]
+Steps 17601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:22:09.175749] [Steps   17800] [G 0.0031459]
+Steps 17801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:27:52.042090] [Steps   18000] [G 0.0037251]
+Steps 18001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:33:33.173847] [Steps   18200] [G 0.0026923]
+Steps 18201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:39:15.365312] [Steps   18400] [G 0.0032065]
+Steps 18401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:44:57.075282] [Steps   18600] [G 0.0043607]
+Steps 18601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:50:37.553291] [Steps   18800] [G 0.0034996]
+Steps 18801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 19:56:19.151104] [Steps   19000] [G 0.0033974]
+Steps 19001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:02:01.077925] [Steps   19200] [G 0.0038930]
+Steps 19201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:07:41.172036] [Steps   19400] [G 0.0036838]
+Steps 19401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:13:23.096099] [Steps   19600] [G 0.0033006]
+Steps 19601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:19:05.170311] [Steps   19800] [G 0.0040157]
+Steps 19801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:24:44.985389] [Steps   20000] [G 0.0029799]
+Steps 20001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:30:27.616865] [Steps   20200] [G 0.0034868]
+Steps 20201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:36:09.690528] [Steps   20400] [G 0.0036038]
+Steps 20401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:41:49.406283] [Steps   20600] [G 0.0045085]
+Steps 20601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:47:31.198254] [Steps   20800] [G 0.0035596]
+Steps 20801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:53:12.772181] [Steps   21000] [G 0.0033945]
+Steps 21001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 20:58:52.952307] [Steps   21200] [G 0.0024186]
+Steps 21201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:04:34.518369] [Steps   21400] [G 0.0029689]
+Steps 21401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:10:16.744217] [Steps   21600] [G 0.0046765]
+Steps 21601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:15:57.166291] [Steps   21800] [G 0.0039412]
+Steps 21801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:21:39.054563] [Steps   22000] [G 0.0032083]
+Steps 22001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:27:21.196740] [Steps   22200] [G 0.0035562]
+Steps 22201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:33:02.555406] [Steps   22400] [G 0.0026480]
+Steps 22401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:38:43.989506] [Steps   22600] [G 0.0038855]
+Steps 22601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:44:24.657120] [Steps   22800] [G 0.0030300]
+Steps 22801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:50:05.683934] [Steps   23000] [G 0.0031160]
+Steps 23001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 21:55:47.760078] [Steps   23200] [G 0.0033873]
+Steps 23201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:01:29.721521] [Steps   23400] [G 0.0025211]
+Steps 23401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:07:09.929744] [Steps   23600] [G 0.0031444]
+Steps 23601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:12:51.749099] [Steps   23800] [G 0.0025967]
+Steps 23801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:18:33.181125] [Steps   24000] [G 0.0025337]
+Steps 24001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:24:12.768028] [Steps   24200] [G 0.0028866]
+Steps 24201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:29:54.563927] [Steps   24400] [G 0.0029451]
+Steps 24401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:35:36.461522] [Steps   24600] [G 0.0029941]
+Steps 24601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:41:16.656096] [Steps   24800] [G 0.0036872]
+Steps 24801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:46:57.952251] [Steps   25000] [G 0.0028733]
+Steps 25001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:52:39.108491] [Steps   25200] [G 0.0031561]
+Steps 25201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 22:58:19.254589] [Steps   25400] [G 0.0049437]
+Steps 25401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:04:01.020117] [Steps   25600] [G 0.0031614]
+Steps 25601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:09:43.322032] [Steps   25800] [G 0.0021280]
+Steps 25801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:15:22.978183] [Steps   26000] [G 0.0027011]
+Steps 26001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:21:04.359447] [Steps   26200] [G 0.0022960]
+Steps 26201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:26:46.277853] [Steps   26400] [G 0.0024708]
+Steps 26401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:32:26.505988] [Steps   26600] [G 0.0030644]
+Steps 26601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:38:08.791237] [Steps   26800] [G 0.0027658]
+Steps 26801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:43:50.262041] [Steps   27000] [G 0.0037850]
+Steps 27001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:49:29.984521] [Steps   27200] [G 0.0025086]
+Steps 27201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-21 23:55:11.978464] [Steps   27400] [G 0.0028825]
+Steps 27401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:00:53.995548] [Steps   27600] [G 0.0026723]
+Steps 27601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:06:33.608293] [Steps   27800] [G 0.0037506]
+Steps 27801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:12:15.727810] [Steps   28000] [G 0.0024234]
+Steps 28001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:17:57.399880] [Steps   28200] [G 0.0026964]
+Steps 28201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:23:37.848336] [Steps   28400] [G 0.0021597]
+Steps 28401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:29:20.149843] [Steps   28600] [G 0.0028462]
+Steps 28601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:35:01.956686] [Steps   28800] [G 0.0019737]
+Steps 28801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:40:41.798255] [Steps   29000] [G 0.0024762]
+Steps 29001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:46:23.292166] [Steps   29200] [G 0.0032716]
+Steps 29201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:52:05.273149] [Steps   29400] [G 0.0018799]
+Steps 29401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 00:57:45.290758] [Steps   29600] [G 0.0028518]
+Steps 29601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:03:27.538794] [Steps   29800] [G 0.0022283]
+Steps 29801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:09:09.386647] [Steps   30000] [G 0.0021537]
+Steps 30001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:14:49.195646] [Steps   30200] [G 0.0020042]
+Steps 30201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:20:30.446062] [Steps   30400] [G 0.0026873]
+Steps 30401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:26:11.222932] [Steps   30600] [G 0.0016197]
+Steps 30601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:31:49.995542] [Steps   30800] [G 0.0020835]
+Steps 30801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:37:31.775488] [Steps   31000] [G 0.0019677]
+Steps 31001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:43:13.871334] [Steps   31200] [G 0.0021311]
+Steps 31201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:48:54.725349] [Steps   31400] [G 0.0021739]
+Steps 31401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 01:54:37.116966] [Steps   31600] [G 0.0017403]
+Steps 31601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:00:19.611695] [Steps   31800] [G 0.0019889]
+Steps 31801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:05:59.712026] [Steps   32000] [G 0.0018121]
+Steps 32001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:11:41.934028] [Steps   32200] [G 0.0015945]
+Steps 32201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:17:23.759959] [Steps   32400] [G 0.0021279]
+Steps 32401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:23:04.275843] [Steps   32600] [G 0.0029528]
+Steps 32601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:28:46.460336] [Steps   32800] [G 0.0019793]
+Steps 32801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:34:28.008354] [Steps   33000] [G 0.0015612]
+Steps 33001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:40:08.303381] [Steps   33200] [G 0.0030262]
+Steps 33201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:45:50.074136] [Steps   33400] [G 0.0016001]
+Steps 33401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:51:32.223796] [Steps   33600] [G 0.0022501]
+Steps 33601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 02:57:12.147450] [Steps   33800] [G 0.0015034]
+Steps 33801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:02:54.210315] [Steps   34000] [G 0.0026856]
+Steps 34001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:08:35.643128] [Steps   34200] [G 0.0017487]
+Steps 34201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:14:15.670106] [Steps   34400] [G 0.0017138]
+Steps 34401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:19:57.742936] [Steps   34600] [G 0.0016089]
+Steps 34601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:25:39.509631] [Steps   34800] [G 0.0020899]
+Steps 34801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:31:19.413760] [Steps   35000] [G 0.0025352]
+Steps 35001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:37:01.430241] [Steps   35200] [G 0.0019058]
+Steps 35201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:42:43.545589] [Steps   35400] [G 0.0016769]
+Steps 35401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:48:23.971207] [Steps   35600] [G 0.0023857]
+Steps 35601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:54:05.421043] [Steps   35800] [G 0.0019600]
+Steps 35801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 03:59:47.072777] [Steps   36000] [G 0.0018533]
+Steps 36001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:05:27.883652] [Steps   36200] [G 0.0022022]
+Steps 36201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:11:09.886109] [Steps   36400] [G 0.0032709]
+Steps 36401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:16:52.059724] [Steps   36600] [G 0.0013903]
+Steps 36601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:22:31.591381] [Steps   36800] [G 0.0020554]
+Steps 36801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:28:13.332103] [Steps   37000] [G 0.0015183]
+Steps 37001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:33:55.341488] [Steps   37200] [G 0.0033491]
+Steps 37201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:39:35.259409] [Steps   37400] [G 0.0014760]
+Steps 37401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:45:17.373132] [Steps   37600] [G 0.0017177]
+Steps 37601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:50:58.944164] [Steps   37800] [G 0.0019594]
+Steps 37801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 04:56:39.059590] [Steps   38000] [G 0.0013761]
+Steps 38001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:02:21.157893] [Steps   38200] [G 0.0014332]
+Steps 38201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:08:03.105149] [Steps   38400] [G 0.0019253]
+Steps 38401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:13:43.284495] [Steps   38600] [G 0.0020783]
+Steps 38601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:19:24.356665] [Steps   38800] [G 0.0018844]
+Steps 38801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:25:06.065940] [Steps   39000] [G 0.0014587]
+Steps 39001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:30:48.073950] [Steps   39200] [G 0.0014370]
+Steps 39201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:36:27.732548] [Steps   39400] [G 0.0014931]
+Steps 39401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:42:09.577752] [Steps   39600] [G 0.0012245]
+Steps 39601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:47:51.232034] [Steps   39800] [G 0.0016001]
+Steps 39801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:53:31.535973] [Steps   40000] [G 0.0016043]
+Steps 40001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 05:59:14.483966] [Steps   40200] [G 0.0015901]
+Steps 40201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:04:55.878214] [Steps   40400] [G 0.0013203]
+Steps 40401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:10:35.773804] [Steps   40600] [G 0.0013278]
+Steps 40601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:16:17.786783] [Steps   40800] [G 0.0013484]
+Steps 40801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:21:59.658406] [Steps   41000] [G 0.0017660]
+Steps 41001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:27:39.503882] [Steps   41200] [G 0.0018335]
+Steps 41201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:33:21.115514] [Steps   41400] [G 0.0022666]
+Steps 41401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:39:03.376777] [Steps   41600] [G 0.0020946]
+Steps 41601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:44:43.805269] [Steps   41800] [G 0.0018199]
+Steps 41801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:50:26.224422] [Steps   42000] [G 0.0014536]
+Steps 42001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 06:56:08.021765] [Steps   42200] [G 0.0013014]
+Steps 42201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:01:47.595702] [Steps   42400] [G 0.0011290]
+Steps 42401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:07:29.836285] [Steps   42600] [G 0.0010878]
+Steps 42601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:13:11.759221] [Steps   42800] [G 0.0013016]
+Steps 42801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:18:51.321382] [Steps   43000] [G 0.0030078]
+Steps 43001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:24:33.833948] [Steps   43200] [G 0.0019895]
+Steps 43201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:30:16.732443] [Steps   43400] [G 0.0015719]
+Steps 43401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:35:57.267791] [Steps   43600] [G 0.0011872]
+Steps 43601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:41:39.040688] [Steps   43800] [G 0.0018034]
+Steps 43801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:47:21.351995] [Steps   44000] [G 0.0013549]
+Steps 44001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:53:01.203302] [Steps   44200] [G 0.0011737]
+Steps 44201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 07:58:43.393561] [Steps   44400] [G 0.0013366]
+Steps 44401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:04:25.301351] [Steps   44600] [G 0.0014569]
+Steps 44601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:10:05.469185] [Steps   44800] [G 0.0021581]
+Steps 44801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:15:47.578293] [Steps   45000] [G 0.0012877]
+Steps 45001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:21:29.262600] [Steps   45200] [G 0.0009596]
+Steps 45201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:27:09.899956] [Steps   45400] [G 0.0019177]
+Steps 45401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:32:51.808009] [Steps   45600] [G 0.0016254]
+Steps 45601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:38:33.894602] [Steps   45800] [G 0.0013523]
+Steps 45801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:44:14.697935] [Steps   46000] [G 0.0016099]
+Steps 46001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:49:57.091812] [Steps   46200] [G 0.0013536]
+Steps 46201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 08:55:39.257415] [Steps   46400] [G 0.0013157]
+Steps 46401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 09:01:19.240109] [Steps   46600] [G 0.0013109]
+Steps 46601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 09:07:01.656024] [Steps   46800] [G 0.0012118]
+Steps 46801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 09:12:43.271883] [Steps   47000] [G 0.0018396]
+Steps 47001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 09:18:24.123670] [Steps   47200] [G 0.0018195]
+Steps 47201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 09:24:05.951770] [Steps   47400] [G 0.0014076]
+Steps 47401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+get_dataset(dataset=options['dataset'])为(<datasets.MyColorTransferImageDataset1 object at 0x7f524258fb90>, (128, 128, 3))
+Since no pretrained weights have been provided, we load the reference pretrained DINO weights.
+generator的预训练参数加载结果为_IncompatibleKeys(missing_keys=['style.1.weight', 'style.1.bias', 'blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm1.mlp_gamma.weight', 'blocks.0.norm1.mlp_gamma.bias', 'blocks.0.norm1.mlp_beta.weight', 'blocks.0.norm1.mlp_beta.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.0.norm2.mlp_gamma.weight', 'blocks.0.norm2.mlp_gamma.bias', 'blocks.0.norm2.mlp_beta.weight', 'blocks.0.norm2.mlp_beta.bias', 'blocks.0.skip.weight', 'blocks.0.skip.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm1.mlp_gamma.weight', 'blocks.1.norm1.mlp_gamma.bias', 'blocks.1.norm1.mlp_beta.weight', 'blocks.1.norm1.mlp_beta.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.1.norm2.mlp_gamma.weight', 'blocks.1.norm2.mlp_gamma.bias', 'blocks.1.norm2.mlp_beta.weight', 'blocks.1.norm2.mlp_beta.bias', 'blocks.1.skip.weight', 'blocks.1.skip.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm1.mlp_gamma.weight', 'blocks.2.norm1.mlp_gamma.bias', 'blocks.2.norm1.mlp_beta.weight', 'blocks.2.norm1.mlp_beta.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.2.norm2.mlp_gamma.weight', 'blocks.2.norm2.mlp_gamma.bias', 'blocks.2.norm2.mlp_beta.weight', 'blocks.2.norm2.mlp_beta.bias', 'blocks.2.skip.weight', 'blocks.2.skip.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm1.mlp_gamma.weight', 'blocks.3.norm1.mlp_gamma.bias', 'blocks.3.norm1.mlp_beta.weight', 'blocks.3.norm1.mlp_beta.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.3.norm2.mlp_gamma.weight', 'blocks.3.norm2.mlp_gamma.bias', 'blocks.3.norm2.mlp_beta.weight', 'blocks.3.norm2.mlp_beta.bias', 'blocks.3.skip.weight', 'blocks.3.skip.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm1.mlp_gamma.weight', 'blocks.4.norm1.mlp_gamma.bias', 'blocks.4.norm1.mlp_beta.weight', 'blocks.4.norm1.mlp_beta.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.4.norm2.mlp_gamma.weight', 'blocks.4.norm2.mlp_gamma.bias', 'blocks.4.norm2.mlp_beta.weight', 'blocks.4.norm2.mlp_beta.bias', 'blocks.4.skip.weight', 'blocks.4.skip.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm1.mlp_gamma.weight', 'blocks.5.norm1.mlp_gamma.bias', 'blocks.5.norm1.mlp_beta.weight', 'blocks.5.norm1.mlp_beta.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.5.norm2.mlp_gamma.weight', 'blocks.5.norm2.mlp_gamma.bias', 'blocks.5.norm2.mlp_beta.weight', 'blocks.5.norm2.mlp_beta.bias', 'blocks.5.skip.weight', 'blocks.5.skip.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm1.mlp_gamma.weight', 'blocks.6.norm1.mlp_gamma.bias', 'blocks.6.norm1.mlp_beta.weight', 'blocks.6.norm1.mlp_beta.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'blocks.6.norm2.mlp_gamma.weight', 'blocks.6.norm2.mlp_gamma.bias', 'blocks.6.norm2.mlp_beta.weight', 'blocks.6.norm2.mlp_beta.bias', 'blocks.6.skip.weight', 'blocks.6.skip.bias', 'convs.0.conv.weight', 'convs.0.conv.blur.kernel', 'convs.0.conv.modulation.weight', 'convs.0.conv.modulation.bias', 'convs.0.noise.weight', 'convs.0.activate.bias', 'convs.1.conv.weight', 'convs.1.conv.modulation.weight', 'convs.1.conv.modulation.bias', 'convs.1.noise.weight', 'convs.1.activate.bias', 'convs.2.conv.weight', 'convs.2.conv.blur.kernel', 'convs.2.conv.modulation.weight', 'convs.2.conv.modulation.bias', 'convs.2.noise.weight', 'convs.2.activate.bias', 'convs.3.conv.weight', 'convs.3.conv.modulation.weight', 'convs.3.conv.modulation.bias', 'convs.3.noise.weight', 'convs.3.activate.bias', 'convs.4.conv.weight', 'convs.4.conv.blur.kernel', 'convs.4.conv.modulation.weight', 'convs.4.conv.modulation.bias', 'convs.4.noise.weight', 'convs.4.activate.bias', 'convs.5.conv.weight', 'convs.5.conv.modulation.weight', 'convs.5.conv.modulation.bias', 'convs.5.noise.weight', 'convs.5.activate.bias', 'convs.6.conv.weight', 'convs.6.conv.blur.kernel', 'convs.6.conv.modulation.weight', 'convs.6.conv.modulation.bias', 'convs.6.noise.weight', 'convs.6.activate.bias', 'convs.7.conv.weight', 'convs.7.conv.modulation.weight', 'convs.7.conv.modulation.bias', 'convs.7.noise.weight', 'convs.7.activate.bias', 'convs.8.conv.weight', 'convs.8.conv.modulation.weight', 'convs.8.conv.modulation.bias', 'convs.8.noise.weight', 'convs.8.activate.bias', 'convs.9.conv.weight', 'convs.9.conv.modulation.weight', 'convs.9.conv.modulation.bias', 'convs.9.noise.weight', 'convs.9.activate.bias', 'convs.10.conv.weight', 'convs.10.conv.modulation.weight', 'convs.10.conv.modulation.bias', 'convs.10.noise.weight', 'convs.10.activate.bias', 'convs.11.conv.weight', 'convs.11.conv.modulation.weight', 'convs.11.conv.modulation.bias', 'convs.11.noise.weight', 'convs.11.activate.bias', 'convs.12.conv.weight', 'convs.12.conv.modulation.weight', 'convs.12.conv.modulation.bias', 'convs.12.noise.weight', 'convs.12.activate.bias', 'convs.13.conv.weight', 'convs.13.conv.modulation.weight', 'convs.13.conv.modulation.bias', 'convs.13.noise.weight', 'convs.13.activate.bias', 'convs.14.conv.weight', 'convs.14.conv.modulation.weight', 'convs.14.conv.modulation.bias', 'convs.14.noise.weight', 'convs.14.activate.bias', 'convs.15.conv.weight', 'convs.15.conv.modulation.weight', 'convs.15.conv.modulation.bias', 'convs.15.noise.weight', 'convs.15.activate.bias', 'to_rgb.bias', 'to_rgb.conv.weight', 'to_rgb.conv.modulation.weight', 'to_rgb.conv.modulation.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias', 'norm.mlp_gamma.weight', 'norm.mlp_gamma.bias', 'norm.mlp_beta.weight', 'norm.mlp_beta.bias', 'mid.weight', 'mid.bias'], unexpected_keys=['blocks.7.norm1.weight', 'blocks.7.norm1.bias', 'blocks.7.attn.qkv.weight', 'blocks.7.attn.qkv.bias', 'blocks.7.attn.proj.weight', 'blocks.7.attn.proj.bias', 'blocks.7.norm2.weight', 'blocks.7.norm2.bias', 'blocks.7.mlp.fc1.weight', 'blocks.7.mlp.fc1.bias', 'blocks.7.mlp.fc2.weight', 'blocks.7.mlp.fc2.bias', 'blocks.8.norm1.weight', 'blocks.8.norm1.bias', 'blocks.8.attn.qkv.weight', 'blocks.8.attn.qkv.bias', 'blocks.8.attn.proj.weight', 'blocks.8.attn.proj.bias', 'blocks.8.norm2.weight', 'blocks.8.norm2.bias', 'blocks.8.mlp.fc1.weight', 'blocks.8.mlp.fc1.bias', 'blocks.8.mlp.fc2.weight', 'blocks.8.mlp.fc2.bias', 'blocks.9.norm1.weight', 'blocks.9.norm1.bias', 'blocks.9.attn.qkv.weight', 'blocks.9.attn.qkv.bias', 'blocks.9.attn.proj.weight', 'blocks.9.attn.proj.bias', 'blocks.9.norm2.weight', 'blocks.9.norm2.bias', 'blocks.9.mlp.fc1.weight', 'blocks.9.mlp.fc1.bias', 'blocks.9.mlp.fc2.weight', 'blocks.9.mlp.fc2.bias', 'blocks.10.norm1.weight', 'blocks.10.norm1.bias', 'blocks.10.attn.qkv.weight', 'blocks.10.attn.qkv.bias', 'blocks.10.attn.proj.weight', 'blocks.10.attn.proj.bias', 'blocks.10.norm2.weight', 'blocks.10.norm2.bias', 'blocks.10.mlp.fc1.weight', 'blocks.10.mlp.fc1.bias', 'blocks.10.mlp.fc2.weight', 'blocks.10.mlp.fc2.bias', 'blocks.11.norm1.weight', 'blocks.11.norm1.bias', 'blocks.11.attn.qkv.weight', 'blocks.11.attn.qkv.bias', 'blocks.11.attn.proj.weight', 'blocks.11.attn.proj.bias', 'blocks.11.norm2.weight', 'blocks.11.norm2.bias', 'blocks.11.mlp.fc1.weight', 'blocks.11.mlp.fc1.bias', 'blocks.11.mlp.fc2.weight', 'blocks.11.mlp.fc2.bias', 'blocks.0.norm1.weight', 'blocks.0.norm1.bias', 'blocks.0.norm2.weight', 'blocks.0.norm2.bias', 'blocks.1.norm1.weight', 'blocks.1.norm1.bias', 'blocks.1.norm2.weight', 'blocks.1.norm2.bias', 'blocks.2.norm1.weight', 'blocks.2.norm1.bias', 'blocks.2.norm2.weight', 'blocks.2.norm2.bias', 'blocks.3.norm1.weight', 'blocks.3.norm1.bias', 'blocks.3.norm2.weight', 'blocks.3.norm2.bias', 'blocks.4.norm1.weight', 'blocks.4.norm1.bias', 'blocks.4.norm2.weight', 'blocks.4.norm2.bias', 'blocks.5.norm1.weight', 'blocks.5.norm1.bias', 'blocks.5.norm2.weight', 'blocks.5.norm2.bias', 'blocks.6.norm1.weight', 'blocks.6.norm1.bias', 'blocks.6.norm2.weight', 'blocks.6.norm2.bias', 'norm.weight', 'norm.bias'])
+g_ema的预训练参数加载结果为_IncompatibleKeys(missing_keys=['style.1.weight', 'style.1.bias', 'blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm1.mlp_gamma.weight', 'blocks.0.norm1.mlp_gamma.bias', 'blocks.0.norm1.mlp_beta.weight', 'blocks.0.norm1.mlp_beta.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.0.norm2.mlp_gamma.weight', 'blocks.0.norm2.mlp_gamma.bias', 'blocks.0.norm2.mlp_beta.weight', 'blocks.0.norm2.mlp_beta.bias', 'blocks.0.skip.weight', 'blocks.0.skip.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm1.mlp_gamma.weight', 'blocks.1.norm1.mlp_gamma.bias', 'blocks.1.norm1.mlp_beta.weight', 'blocks.1.norm1.mlp_beta.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.1.norm2.mlp_gamma.weight', 'blocks.1.norm2.mlp_gamma.bias', 'blocks.1.norm2.mlp_beta.weight', 'blocks.1.norm2.mlp_beta.bias', 'blocks.1.skip.weight', 'blocks.1.skip.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm1.mlp_gamma.weight', 'blocks.2.norm1.mlp_gamma.bias', 'blocks.2.norm1.mlp_beta.weight', 'blocks.2.norm1.mlp_beta.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.2.norm2.mlp_gamma.weight', 'blocks.2.norm2.mlp_gamma.bias', 'blocks.2.norm2.mlp_beta.weight', 'blocks.2.norm2.mlp_beta.bias', 'blocks.2.skip.weight', 'blocks.2.skip.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm1.mlp_gamma.weight', 'blocks.3.norm1.mlp_gamma.bias', 'blocks.3.norm1.mlp_beta.weight', 'blocks.3.norm1.mlp_beta.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.3.norm2.mlp_gamma.weight', 'blocks.3.norm2.mlp_gamma.bias', 'blocks.3.norm2.mlp_beta.weight', 'blocks.3.norm2.mlp_beta.bias', 'blocks.3.skip.weight', 'blocks.3.skip.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm1.mlp_gamma.weight', 'blocks.4.norm1.mlp_gamma.bias', 'blocks.4.norm1.mlp_beta.weight', 'blocks.4.norm1.mlp_beta.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.4.norm2.mlp_gamma.weight', 'blocks.4.norm2.mlp_gamma.bias', 'blocks.4.norm2.mlp_beta.weight', 'blocks.4.norm2.mlp_beta.bias', 'blocks.4.skip.weight', 'blocks.4.skip.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm1.mlp_gamma.weight', 'blocks.5.norm1.mlp_gamma.bias', 'blocks.5.norm1.mlp_beta.weight', 'blocks.5.norm1.mlp_beta.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.5.norm2.mlp_gamma.weight', 'blocks.5.norm2.mlp_gamma.bias', 'blocks.5.norm2.mlp_beta.weight', 'blocks.5.norm2.mlp_beta.bias', 'blocks.5.skip.weight', 'blocks.5.skip.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm1.mlp_gamma.weight', 'blocks.6.norm1.mlp_gamma.bias', 'blocks.6.norm1.mlp_beta.weight', 'blocks.6.norm1.mlp_beta.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'blocks.6.norm2.mlp_gamma.weight', 'blocks.6.norm2.mlp_gamma.bias', 'blocks.6.norm2.mlp_beta.weight', 'blocks.6.norm2.mlp_beta.bias', 'blocks.6.skip.weight', 'blocks.6.skip.bias', 'convs.0.conv.weight', 'convs.0.conv.blur.kernel', 'convs.0.conv.modulation.weight', 'convs.0.conv.modulation.bias', 'convs.0.noise.weight', 'convs.0.activate.bias', 'convs.1.conv.weight', 'convs.1.conv.modulation.weight', 'convs.1.conv.modulation.bias', 'convs.1.noise.weight', 'convs.1.activate.bias', 'convs.2.conv.weight', 'convs.2.conv.blur.kernel', 'convs.2.conv.modulation.weight', 'convs.2.conv.modulation.bias', 'convs.2.noise.weight', 'convs.2.activate.bias', 'convs.3.conv.weight', 'convs.3.conv.modulation.weight', 'convs.3.conv.modulation.bias', 'convs.3.noise.weight', 'convs.3.activate.bias', 'convs.4.conv.weight', 'convs.4.conv.blur.kernel', 'convs.4.conv.modulation.weight', 'convs.4.conv.modulation.bias', 'convs.4.noise.weight', 'convs.4.activate.bias', 'convs.5.conv.weight', 'convs.5.conv.modulation.weight', 'convs.5.conv.modulation.bias', 'convs.5.noise.weight', 'convs.5.activate.bias', 'convs.6.conv.weight', 'convs.6.conv.blur.kernel', 'convs.6.conv.modulation.weight', 'convs.6.conv.modulation.bias', 'convs.6.noise.weight', 'convs.6.activate.bias', 'convs.7.conv.weight', 'convs.7.conv.modulation.weight', 'convs.7.conv.modulation.bias', 'convs.7.noise.weight', 'convs.7.activate.bias', 'convs.8.conv.weight', 'convs.8.conv.modulation.weight', 'convs.8.conv.modulation.bias', 'convs.8.noise.weight', 'convs.8.activate.bias', 'convs.9.conv.weight', 'convs.9.conv.modulation.weight', 'convs.9.conv.modulation.bias', 'convs.9.noise.weight', 'convs.9.activate.bias', 'convs.10.conv.weight', 'convs.10.conv.modulation.weight', 'convs.10.conv.modulation.bias', 'convs.10.noise.weight', 'convs.10.activate.bias', 'convs.11.conv.weight', 'convs.11.conv.modulation.weight', 'convs.11.conv.modulation.bias', 'convs.11.noise.weight', 'convs.11.activate.bias', 'convs.12.conv.weight', 'convs.12.conv.modulation.weight', 'convs.12.conv.modulation.bias', 'convs.12.noise.weight', 'convs.12.activate.bias', 'convs.13.conv.weight', 'convs.13.conv.modulation.weight', 'convs.13.conv.modulation.bias', 'convs.13.noise.weight', 'convs.13.activate.bias', 'convs.14.conv.weight', 'convs.14.conv.modulation.weight', 'convs.14.conv.modulation.bias', 'convs.14.noise.weight', 'convs.14.activate.bias', 'convs.15.conv.weight', 'convs.15.conv.modulation.weight', 'convs.15.conv.modulation.bias', 'convs.15.noise.weight', 'convs.15.activate.bias', 'to_rgb.bias', 'to_rgb.conv.weight', 'to_rgb.conv.modulation.weight', 'to_rgb.conv.modulation.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias', 'norm.mlp_gamma.weight', 'norm.mlp_gamma.bias', 'norm.mlp_beta.weight', 'norm.mlp_beta.bias', 'mid.weight', 'mid.bias'], unexpected_keys=['blocks.7.norm1.weight', 'blocks.7.norm1.bias', 'blocks.7.attn.qkv.weight', 'blocks.7.attn.qkv.bias', 'blocks.7.attn.proj.weight', 'blocks.7.attn.proj.bias', 'blocks.7.norm2.weight', 'blocks.7.norm2.bias', 'blocks.7.mlp.fc1.weight', 'blocks.7.mlp.fc1.bias', 'blocks.7.mlp.fc2.weight', 'blocks.7.mlp.fc2.bias', 'blocks.8.norm1.weight', 'blocks.8.norm1.bias', 'blocks.8.attn.qkv.weight', 'blocks.8.attn.qkv.bias', 'blocks.8.attn.proj.weight', 'blocks.8.attn.proj.bias', 'blocks.8.norm2.weight', 'blocks.8.norm2.bias', 'blocks.8.mlp.fc1.weight', 'blocks.8.mlp.fc1.bias', 'blocks.8.mlp.fc2.weight', 'blocks.8.mlp.fc2.bias', 'blocks.9.norm1.weight', 'blocks.9.norm1.bias', 'blocks.9.attn.qkv.weight', 'blocks.9.attn.qkv.bias', 'blocks.9.attn.proj.weight', 'blocks.9.attn.proj.bias', 'blocks.9.norm2.weight', 'blocks.9.norm2.bias', 'blocks.9.mlp.fc1.weight', 'blocks.9.mlp.fc1.bias', 'blocks.9.mlp.fc2.weight', 'blocks.9.mlp.fc2.bias', 'blocks.10.norm1.weight', 'blocks.10.norm1.bias', 'blocks.10.attn.qkv.weight', 'blocks.10.attn.qkv.bias', 'blocks.10.attn.proj.weight', 'blocks.10.attn.proj.bias', 'blocks.10.norm2.weight', 'blocks.10.norm2.bias', 'blocks.10.mlp.fc1.weight', 'blocks.10.mlp.fc1.bias', 'blocks.10.mlp.fc2.weight', 'blocks.10.mlp.fc2.bias', 'blocks.11.norm1.weight', 'blocks.11.norm1.bias', 'blocks.11.attn.qkv.weight', 'blocks.11.attn.qkv.bias', 'blocks.11.attn.proj.weight', 'blocks.11.attn.proj.bias', 'blocks.11.norm2.weight', 'blocks.11.norm2.bias', 'blocks.11.mlp.fc1.weight', 'blocks.11.mlp.fc1.bias', 'blocks.11.mlp.fc2.weight', 'blocks.11.mlp.fc2.bias', 'blocks.0.norm1.weight', 'blocks.0.norm1.bias', 'blocks.0.norm2.weight', 'blocks.0.norm2.bias', 'blocks.1.norm1.weight', 'blocks.1.norm1.bias', 'blocks.1.norm2.weight', 'blocks.1.norm2.bias', 'blocks.2.norm1.weight', 'blocks.2.norm1.bias', 'blocks.2.norm2.weight', 'blocks.2.norm2.bias', 'blocks.3.norm1.weight', 'blocks.3.norm1.bias', 'blocks.3.norm2.weight', 'blocks.3.norm2.bias', 'blocks.4.norm1.weight', 'blocks.4.norm1.bias', 'blocks.4.norm2.weight', 'blocks.4.norm2.bias', 'blocks.5.norm1.weight', 'blocks.5.norm1.bias', 'blocks.5.norm2.weight', 'blocks.5.norm2.bias', 'blocks.6.norm1.weight', 'blocks.6.norm1.bias', 'blocks.6.norm2.weight', 'blocks.6.norm2.bias', 'norm.weight', 'norm.bias'])/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+generator的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+g_ema的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+Traceback (most recent call last):
+  File "train2_vitGenerator.py", line 394, in <module>
+    worker(P)
+  File "train2_vitGenerator.py", line 367, in worker
+    G_optimizer.load_state_dict(opt["optim_G"])#!
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/optim/optimizer.py", line 146, in load_state_dict
+    raise ValueError("loaded state dict contains a parameter group "
+ValueError: loaded state dict contains a parameter group that doesn't match the size of optimizer's group
+get_dataset(dataset=options['dataset'])为(<datasets.MyColorTransferImageDataset1 object at 0x7fc491561c90>, (128, 128, 3))
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+generator的train1参数加载结果为<All keys matched successfully>
+g_ema的train1参数加载结果为<All keys matched successfully>
+[2023-05-22 10:27:08.587388] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+[2023-05-22 10:27:08.587480] Use G moving average: 0.9999778195362122
+Steps 47401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+lr为0.0001
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+[2023-05-22 10:32:55.803840] [Steps   47600] [G 0.0011502]
+Steps 47601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 10:38:34.469020] [Steps   47800] [G 0.0008176]
+Steps 47801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 10:44:12.906196] [Steps   48000] [G 0.0011509]
+Steps 48001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 10:49:49.643379] [Steps   48200] [G 0.0015443]
+Steps 48201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 10:55:27.482133] [Steps   48400] [G 0.0012604]
+Steps 48401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:01:05.546026] [Steps   48600] [G 0.0014988]
+Steps 48601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:06:41.555803] [Steps   48800] [G 0.0013231]
+Steps 48801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:12:19.640779] [Steps   49000] [G 0.0014498]
+Steps 49001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:17:57.382138] [Steps   49200] [G 0.0011970]
+Steps 49201 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:23:34.004632] [Steps   49400] [G 0.0011510]
+Steps 49401 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:29:11.769467] [Steps   49600] [G 0.0013092]
+Steps 49601 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:34:50.363374] [Steps   49800] [G 0.0009484]
+Steps 49801 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+[2023-05-22 11:40:27.820314] [Steps   50000] [G 0.0010858]
+Steps 50001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+get_dataset(dataset=options['dataset'])为(<datasets.MyColorTransferImageDataset1 object at 0x7f0493596b50>, (128, 128, 3))
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+generator的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+g_ema的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+Traceback (most recent call last):
+  File "train2_vitGenerator.py", line 394, in <module>
+    worker(P)
+  File "train2_vitGenerator.py", line 367, in worker
+    G_optimizer.load_state_dict(opt["optim_G"])#!
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/optim/optimizer.py", line 146, in load_state_dict
+    raise ValueError("loaded state dict contains a parameter group "
+ValueError: loaded state dict contains a parameter group that doesn't match the size of optimizer's group
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+get_dataset(dataset=options['dataset'])为(<datasets.MyColorTransferImageDataset1 object at 0x7fa5b2730ad0>, (128, 128, 3))
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6655'
+generator的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+g_ema的train1参数加载结果为_IncompatibleKeys(missing_keys=['blocks.0.norm1.param_free_norm.weight', 'blocks.0.norm1.param_free_norm.bias', 'blocks.0.norm2.param_free_norm.weight', 'blocks.0.norm2.param_free_norm.bias', 'blocks.1.norm1.param_free_norm.weight', 'blocks.1.norm1.param_free_norm.bias', 'blocks.1.norm2.param_free_norm.weight', 'blocks.1.norm2.param_free_norm.bias', 'blocks.2.norm1.param_free_norm.weight', 'blocks.2.norm1.param_free_norm.bias', 'blocks.2.norm2.param_free_norm.weight', 'blocks.2.norm2.param_free_norm.bias', 'blocks.3.norm1.param_free_norm.weight', 'blocks.3.norm1.param_free_norm.bias', 'blocks.3.norm2.param_free_norm.weight', 'blocks.3.norm2.param_free_norm.bias', 'blocks.4.norm1.param_free_norm.weight', 'blocks.4.norm1.param_free_norm.bias', 'blocks.4.norm2.param_free_norm.weight', 'blocks.4.norm2.param_free_norm.bias', 'blocks.5.norm1.param_free_norm.weight', 'blocks.5.norm1.param_free_norm.bias', 'blocks.5.norm2.param_free_norm.weight', 'blocks.5.norm2.param_free_norm.bias', 'blocks.6.norm1.param_free_norm.weight', 'blocks.6.norm1.param_free_norm.bias', 'blocks.6.norm2.param_free_norm.weight', 'blocks.6.norm2.param_free_norm.bias', 'norm.param_free_norm.weight', 'norm.param_free_norm.bias'], unexpected_keys=[])
+Traceback (most recent call last):
+  File "train2_vitGenerator.py", line 394, in <module>
+    worker(P)
+  File "train2_vitGenerator.py", line 367, in worker
+    G_optimizer.load_state_dict(opt["optim_G"])#!
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/optim/optimizer.py", line 146, in load_state_dict
+    raise ValueError("loaded state dict contains a parameter group "
+ValueError: loaded state dict contains a parameter group that doesn't match the size of optimizer's group

@@ -1,0 +1,222 @@
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:48:09.472108] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:48:09.472173] Use G moving average: 0.9999889097066088
+G_lr为0.0001
+DS_lr为0.0001
+Steps 100001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+Traceback (most recent call last):
+  File "train_stylegan2_Ds.py", line 571, in <module>
+    worker(P)
+  File "train_stylegan2_Ds.py", line 561, in worker
+    val_pair_loader=val_pair_loader,logger=logger)
+  File "train_stylegan2_Ds.py", line 325, in train
+    ds_loss, ds_aux = train_fn["train3_D_match"](P, discriminator_single, opt,real_images,ugen_images)
+  File "/home/xsx/dino/training/gan/aug_both.py", line 215, in loss_D_my_match_fn
+    d_loss,aux=loss_D_match_fn(P, D, options, l_img_input, u_img_input)
+  File "/home/xsx/dino/training/gan/aug_both.py", line 62, in loss_D_match_fn
+    d_all = D(P.augment_fn(all_images))#用d_all来存储discriminator的输出值
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 167, in forward
+    outputs = self.parallel_apply(replicas, inputs, kwargs)
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 177, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py", line 86, in parallel_apply
+    output.reraise()
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/_utils.py", line 429, in reraise
+    raise self.exc_type(msg)
+RuntimeError: Caught RuntimeError in replica 0 on device 0.
+Original Traceback (most recent call last):
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/parallel/parallel_apply.py", line 61, in _worker
+    output = module(*input, **kwargs)
+  File "/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/xsx/dino/models/gan/base.py", line 147, in forward
+    features = self.penultimate(inputs)#
+  File "/home/xsx/dino/mydiscriminator.py", line 297, in penultimate
+    out = _minibatch_stddev_layer(out)#计算完小批量的标准差后与特征图沿通道拼接起来，因此下一层的输入通道就要比之前多1
+  File "/home/xsx/dino/mydiscriminator.py", line 85, in _minibatch_stddev_layer
+    group, -1, stddev_feat, channel // stddev_feat, height, width
+RuntimeError: shape '[4, -1, 1, 512, 4, 4]' is invalid for input of size 90112
+
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:49:04.229110] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:49:04.229173] Use G moving average: 0.9999916822684258
+G_lr为0.0001
+DS_lr为0.0001
+Steps 100001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.95s/it]100%|██████████| 1/1 [00:02<00:00,  2.95s/it][2023-06-01 19:49:36.341080] [Steps  100002][stage2_val_SSIM 0.8440448][stage2_val_PSNR 19.1554090][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01414266694337]
+[2023-06-01 19:49:48.062898] [Steps  100002][G 0.6437019][G_critic 0.5879465] [G_l_mse 0.0005576] [G_ch_loss 0.00000000000000][DS 1.3749502][DS_real 0.2062250][DS_gen 0.1463697][DS_penalty 0.1185742]
+Steps 100003 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-01 19:49:48.073879] [Steps  100002][fid_score 5.5380655]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.88s/it]100%|██████████| 1/1 [00:02<00:00,  2.88s/it][2023-06-01 19:50:13.231423] [Steps  100004][stage2_val_SSIM 0.8478761][stage2_val_PSNR 19.3061529][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01384321134537]
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:50:59.190630] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-01 19:50:59.190682] Use G moving average: 0.9999916822684258
+G_lr为0.0001
+DS_lr为0.0001
+Steps 100001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:03<00:00,  3.03s/it]100%|██████████| 1/1 [00:03<00:00,  3.03s/it][2023-06-01 23:07:11.530361] [Steps  101000][stage2_val_SSIM 0.8473245][stage2_val_PSNR 19.3782997][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01381709240377]
+
+[2023-06-01 23:07:24.261686] [Steps  101000][G 0.6723017][G_critic 0.6431069] [G_l_mse 0.0002919] [G_ch_loss 0.00000000000000][DS 1.3697917][DS_real 0.2086760][DS_gen 0.1524528][DS_penalty 0.0166181]
+Steps 101001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-01 23:07:24.272662] [Steps  101000][fid_score 4.6346744]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.97s/it]100%|██████████| 1/1 [00:02<00:00,  2.97s/it][2023-06-02 02:23:17.798156] [Steps  102000][stage2_val_SSIM 0.8462117][stage2_val_PSNR 19.3044414][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01397988572717]
+[2023-06-02 02:23:29.924195] [Steps  102000][G 0.7385839][G_critic 0.6895763] [G_l_mse 0.0004901] [G_ch_loss 0.00000000000000][DS 1.3454111][DS_real 0.1304846][DS_gen 0.0350992][DS_penalty 0.0155815]
+Steps 102001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 02:23:29.934872] [Steps  102000][fid_score 4.5322650]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.93s/it]100%|██████████| 1/1 [00:02<00:00,  2.93s/it][2023-06-02 05:39:12.789483] [Steps  103000][stage2_val_SSIM 0.8513518][stage2_val_PSNR 19.5397150][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01346420124173]
+[2023-06-02 05:39:24.564708] [Steps  103000][G 0.7839772][G_critic 0.7294611] [G_l_mse 0.0005452] [G_ch_loss 0.00000000000000][DS 1.3442361][DS_real 0.0614408][DS_gen -0.0258031][DS_penalty 0.0279725]
+Steps 103001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 05:39:24.575277] [Steps  103000][fid_score 4.2419748]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:03<00:00,  3.78s/it]100%|██████████| 1/1 [00:03<00:00,  3.78s/it][2023-06-02 09:08:05.113921] [Steps  104000][stage2_val_SSIM 0.8496299][stage2_val_PSNR 19.4663827][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01358137000352]
+[2023-06-02 09:08:20.846730] [Steps  104000][G 0.7985101][G_critic 0.7467653] [G_l_mse 0.0004684] [G_ch_loss 0.00490721641108][DS 1.3368442][DS_real 0.0897570][DS_gen -0.0268953][DS_penalty 0.0098781]
+Steps 104001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 09:08:20.858599] [Steps  104000][fid_score 4.0324978]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.93s/it]100%|██████████| 1/1 [00:02<00:00,  2.93s/it][2023-06-02 12:25:58.304295] [Steps  105000][stage2_val_SSIM 0.8489616][stage2_val_PSNR 19.3636792][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01385076995939]
+[2023-06-02 12:26:09.962509] [Steps  105000][G 0.7385089][G_critic 0.7057588] [G_l_mse 0.0003275] [G_ch_loss 0.00000000000000][DS 1.3702683][DS_real 0.0394926][DS_gen -0.0010409][DS_penalty 0.0174753]
+Steps 105001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 12:26:09.971999] [Steps  105000][fid_score 4.4952017]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.93s/it]100%|██████████| 1/1 [00:02<00:00,  2.93s/it][2023-06-02 15:42:06.454014] [Steps  106000][stage2_val_SSIM 0.8477877][stage2_val_PSNR 19.4904836][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01388494297862]
+[2023-06-02 15:42:18.167525] [Steps  106000][G 0.7060215][G_critic 0.6810852] [G_l_mse 0.0002168] [G_ch_loss 0.00325927697122][DS 1.3871787][DS_real 0.0229231][DS_gen 0.0221816][DS_penalty 0.0056867]
+Steps 106001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 15:42:18.177345] [Steps  106000][fid_score 3.8585332]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.91s/it]100%|██████████| 1/1 [00:02<00:00,  2.91s/it][2023-06-02 18:58:25.420574] [Steps  107000][stage2_val_SSIM 0.8470957][stage2_val_PSNR 19.2890081][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01385475974530]
+[2023-06-02 18:58:37.188922] [Steps  107000][G 0.7553636][G_critic 0.7079196] [G_l_mse 0.0004738] [G_ch_loss 0.00006042957466][DS 1.3186991][DS_real 0.0959994][DS_gen -0.0501505][DS_penalty 0.0369750]
+Steps 107001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 18:58:37.198831] [Steps  107000][fid_score 4.9934226]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:03<00:00,  3.04s/it]100%|██████████| 1/1 [00:03<00:00,  3.04s/it][2023-06-02 22:15:01.398728] [Steps  108000][stage2_val_SSIM 0.8522120][stage2_val_PSNR 19.5186089][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01320007536560]
+[2023-06-02 22:15:14.071978] [Steps  108000][G 0.7434793][G_critic 0.6870849] [G_l_mse 0.0005628] [G_ch_loss 0.00011514763173][DS 1.3802203][DS_real -0.0015224][DS_gen -0.0211946][DS_penalty 0.0092679]
+Steps 108001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-02 22:15:14.080762] [Steps  108000][fid_score 3.8904581]
+
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-04 03:30:33.521628] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-04 03:30:33.521754] Use G moving average: 0.9999916822684258
+G_lr为0.0001
+DS_lr为0.0001
+Steps 100001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.83s/it]100%|██████████| 1/1 [00:02<00:00,  2.83s/it][2023-06-04 06:49:38.833042] [Steps  101000][stage2_val_SSIM 0.8477163][stage2_val_PSNR 19.4028995][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01380351558328]
+
+[2023-06-04 06:49:51.741229] [Steps  101000][G 0.6765636][G_critic 0.6474323] [G_l_mse 0.0002913] [G_ch_loss 0.00000000000000][DS 1.3710167][DS_real 0.2040085][DS_gen 0.1519321][DS_penalty 0.0156079]
+Steps 101001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 06:49:51.751201] [Steps  101000][fid_score 4.6759370]
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.84s/it]100%|██████████| 1/1 [00:02<00:00,  2.84s/it][2023-06-04 10:08:50.301317] [Steps  102000][stage2_val_SSIM 0.8453122][stage2_val_PSNR 19.3166826][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01403427589685]
+[2023-06-04 10:09:02.037379] [Steps  102000][G 0.7441640][G_critic 0.6954226] [G_l_mse 0.0004874] [G_ch_loss 0.00000000000000][DS 1.3419309][DS_real 0.1083006][DS_gen 0.0087278][DS_penalty 0.0100914]
+Steps 102001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 10:09:02.046265] [Steps  102000][fid_score 4.6592068]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.91s/it]100%|██████████| 1/1 [00:02<00:00,  2.91s/it][2023-06-04 13:28:00.323914] [Steps  103000][stage2_val_SSIM 0.8512391][stage2_val_PSNR 19.5802011][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01344407536089]
+[2023-06-04 13:28:12.164849] [Steps  103000][G 0.7814591][G_critic 0.7241899] [G_l_mse 0.0005727] [G_ch_loss 0.00000000000000][DS 1.3353043][DS_real 0.0658075][DS_gen -0.0401426][DS_penalty 0.0240114]
+Steps 103001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 13:28:12.174589] [Steps  103000][fid_score 4.1145250]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.97s/it]100%|██████████| 1/1 [00:02<00:00,  2.97s/it][2023-06-04 16:47:29.332811] [Steps  104000][stage2_val_SSIM 0.8495130][stage2_val_PSNR 19.5068240][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01354630663991]
+[2023-06-04 16:47:41.293472] [Steps  104000][G 0.7988031][G_critic 0.7534130] [G_l_mse 0.0004207] [G_ch_loss 0.00332031236030][DS 1.3416910][DS_real 0.0905018][DS_gen -0.0136463][DS_penalty 0.0110214]
+Steps 104001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 16:47:41.305602] [Steps  104000][fid_score 3.9540172]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.84s/it]100%|██████████| 1/1 [00:02<00:00,  2.84s/it][2023-06-04 20:06:40.737660] [Steps  105000][stage2_val_SSIM 0.8500432][stage2_val_PSNR 19.4115476][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01375789195299]
+[2023-06-04 20:06:52.693829] [Steps  105000][G 0.7365979][G_critic 0.7035841] [G_l_mse 0.0003301] [G_ch_loss 0.00000000000000][DS 1.3664844][DS_real 0.0499838][DS_gen 0.0021112][DS_penalty 0.0171420]
+Steps 105001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 20:06:52.700662] [Steps  105000][fid_score 4.6144992]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.90s/it]100%|██████████| 1/1 [00:02<00:00,  2.90s/it][2023-06-04 23:25:57.905609] [Steps  106000][stage2_val_SSIM 0.8481573][stage2_val_PSNR 19.4661911][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01382372155786]
+[2023-06-04 23:26:09.953552] [Steps  106000][G 0.6887382][G_critic 0.6665236] [G_l_mse 0.0002221] [G_ch_loss 0.00000000000000][DS 1.3860185][DS_real 0.0342642][DS_gen 0.0308962][DS_penalty 0.0048002]
+Steps 106001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-04 23:26:09.970917] [Steps  106000][fid_score 3.7392204]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.88s/it]100%|██████████| 1/1 [00:02<00:00,  2.88s/it][2023-06-05 02:45:25.626493] [Steps  107000][stage2_val_SSIM 0.8453838][stage2_val_PSNR 19.1410824][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01408248301595]
+[2023-06-05 02:45:37.656462] [Steps  107000][G 0.7606022][G_critic 0.7150822] [G_l_mse 0.0004551] [G_ch_loss 0.00000910431118][DS 1.3081847][DS_real 0.1060780][DS_gen -0.0651255][DS_penalty 0.0553864]
+Steps 107001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-05 02:45:37.671228] [Steps  107000][fid_score 5.0646525]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.80s/it]100%|██████████| 1/1 [00:02<00:00,  2.80s/it][2023-06-05 06:05:05.264287] [Steps  108000][stage2_val_SSIM 0.8525307][stage2_val_PSNR 19.5785565][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01320956367999]
+[2023-06-05 06:05:17.251385] [Steps  108000][G 0.7410955][G_critic 0.6896383] [G_l_mse 0.0005139] [G_ch_loss 0.00007039259071][DS 1.3794620][DS_real -0.0153727][DS_gen -0.0359775][DS_penalty 0.0085884]
+Steps 108001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-05 06:05:17.262839] [Steps  108000][fid_score 3.8584250]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.76s/it]100%|██████████| 1/1 [00:02<00:00,  2.76s/it][2023-06-05 09:24:21.682460] [Steps  109000][stage2_val_SSIM 0.8455787][stage2_val_PSNR 19.1777811][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01361329015344]
+[2023-06-05 09:24:33.517836] [Steps  109000][G 0.7199767][G_critic 0.6647505] [G_l_mse 0.0005523] [G_ch_loss 0.00000000000000][DS 1.3771030][DS_real 0.0629884][DS_gen 0.0383795][DS_penalty 0.0089534]
+Steps 109001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-05 09:24:33.527620] [Steps  109000][fid_score 4.0523759]
+
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:02<00:00,  2.88s/it]100%|██████████| 1/1 [00:02<00:00,  2.88s/it][2023-06-05 12:43:55.052533] [Steps  110000][stage2_val_SSIM 0.8469457][stage2_val_PSNR 19.3819293][stage2_val_ch_loss 0.0000000] [stage2_val_target_loss 0.01383167319000]
+[2023-06-05 12:44:06.905253] [Steps  110000][G 0.8023566][G_critic 0.7374514] [G_l_mse 0.0006491] [G_ch_loss 0.00000000000000][DS 1.3342174][DS_real 0.0628386][DS_gen -0.0506105][DS_penalty 0.0212831]
+Steps 110001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+[2023-06-05 12:44:06.913458] [Steps  110000][fid_score 4.2582319]
+
+=> Loading checkpoint from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-05 13:53:57.258716] Checkpoint loaded from 'logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357'
+[2023-06-05 13:53:57.258771] Use G moving average: 0.9999916822684258
+G_lr为0.0001
+DP_lr为0.0001
+DS_lr为0.0001
+Steps 75001 (logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/5357)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/home/xsx/anaconda3/envs/xsx_dino2/lib/python3.7/site-packages/pkg_resources/__init__.py:2804: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('zope')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)

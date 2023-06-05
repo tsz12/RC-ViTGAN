@@ -1,0 +1,7 @@
+options.dataset = "unlabeled_data1_LAB_presudo"
+options.batch_size = 12
+options.loss = "nonsat"
+options.max_steps =200000
+options.n_critic = 1
+options.lr = 0.0001
+options.beta = (0.0, 0.99)
