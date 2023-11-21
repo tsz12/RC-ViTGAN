@@ -126,7 +126,7 @@ def compute_stats_from_G(G, model, size, batch_size):
     -- dims        : Dimensionality of features returned by Inception
     -- cuda        : If set to True, use GPU
     -- verbose     : If set to True and parameter out_step is given, the
-                     number of calculated batches is reported.是否播报训练的像信息信息。如果设置为 True 并给出参数 out_step,则报告计算批次数。
+                     number of calculated batches is reported.
     Returns:
     -- mu    : The mean over samples of the activations of the pool_3 layer of
                the inception model.
@@ -164,10 +164,8 @@ def compute_stats_from_dataloader(label_loader,origin_loader,model):
     """Calculates the FID of two paths"""
     predictions = []
     for images, labels in tqdm(label_loader):
-        #print(f"有进入dataloader")
         #print(labels)
         images = images.cuda()
-        #print(f"images的大小为{images}")
         
         with torch.no_grad():
             pred = model(images)[0]
@@ -179,10 +177,8 @@ def compute_stats_from_dataloader(label_loader,origin_loader,model):
 
         predictions.append(pred.view(images.size(0), -1).cpu())
     for images, labels in tqdm(origin_loader):
-        #print(f"有进入dataloader")
         #print(labels)
         images = images.cuda()
-        #print(f"images的大小为{images}")
         
         with torch.no_grad():
             pred = model(images)[0]
@@ -194,7 +190,7 @@ def compute_stats_from_dataloader(label_loader,origin_loader,model):
 
         predictions.append(pred.view(images.size(0), -1).cpu())
    
-    predictions = torch.cat(predictions, dim=0)#batchsize对最终的结果没有影响，反正都是要cat在一起的
+    predictions = torch.cat(predictions, dim=0)
     predictions = predictions.cpu().data.numpy()
 
     mu = np.mean(predictions, axis=0)
@@ -214,7 +210,7 @@ def compute_stats_from_my_G(G, model, size, batch_size,pair_loader):
         with torch.no_grad():
             #images = G(latent_samples)
             images,target_images,illus=next(pair_loader)
-            images = images.cuda()#batch_size除以4
+            images = images.cuda()
             target_images=target_images.cuda()
             illus=illus.cuda()
             images=G(x=images,input=latent_samples,illu=illus)
@@ -227,7 +223,7 @@ def compute_stats_from_my_G(G, model, size, batch_size,pair_loader):
 
         predictions.append(pred.view(images.size(0), -1).cpu())
 
-    predictions = torch.cat(predictions, dim=0)#batchsize对最终结果没有影响，反正都是要cat在一起
+    predictions = torch.cat(predictions, dim=0)
     predictions = predictions.cpu().data.numpy()
 
     mu = np.mean(predictions, axis=0)
@@ -309,7 +305,6 @@ def my_precompute_stats(save_path, model=None, dims=192):
         model.eval()
         model=torch.nn.DataParallel(model)
         # model=model.module
-        #print(f"model的位置为{model.device}")
 
     mu, sigma = compute_stats_from_dataloader(label_loader,origin_loader, model)
     np.savez(save_path, mu=mu, sigma=sigma)
@@ -318,8 +313,7 @@ if __name__ == '__main__':
     from vit_generator_skip import vit_my_8
     generator = vit_my_8(patch_size=16)
     checkpoint = torch.load(f"logs/gan_dp/c10_style64/vitgan/aug_both_diffaug_bcr_R0.1_H1000_NoLazy_NoWarmup/6177/gen_20000_stage2.pt")#这里填模型参数的路径
-    generator.load_state_dict(checkpoint)#加载模型参数
-    # 这里与模型文件参数的区别在于：这是针对代码中创建的模型对象，查看其各个layer的名称与tensor值
+    generator.load_state_dict(checkpoint)
     generator=generator.cuda()
     import torch.nn as nn
     generator.eval()
@@ -334,9 +328,5 @@ if __name__ == '__main__':
     # origin_set=get_dataset(dataset='original_fid')
     # test_set=get_dataset(dataset='test_data_LAB_palette')
     # val_set,_=get_dataset(dataset='val_data')
-    # print(f"label_set的大小为{len(label_set)}")
-    # print(f"origin_set的大小为{len(origin_set)}")
-    # print(f"test_set的大小为{len(test_set)}")
-    # print(f"val_set的大小为{len(val_set)}")
 
 
