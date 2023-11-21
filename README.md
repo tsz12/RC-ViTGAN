@@ -21,6 +21,8 @@ beta for EMA = (0.0, 0.99)
 Supervised Pre-training max_steps=100000  
 
 Adversarial Training max_steps=20000
+## Training Pipeline
+![Training Pipeline of RC-ViTGAN](/assets/fig3.png "Training Pipeline of RC-ViTGAN")
 ## Results
 ### Qualitative Results of Ablation Study
 ![Qualitative Results of Ablation Study](/assets/fig6.png "Qualitative Results of Ablation Study")
