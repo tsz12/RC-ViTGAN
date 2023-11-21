@@ -34,7 +34,7 @@ import time
 
 from torchvision import datasets, transforms
 from tensorboardX import SummaryWriter
-writer=SummaryWriter('out/log_dino_noSLN_smoothL1')#可视化数据放在这个文件夹
+writer=SummaryWriter('out/log_dino_noSLN_smoothL1')
 
 import warnings
 warnings.filterwarnings("ignore",category=DeprecationWarning)
@@ -59,7 +59,7 @@ def parse_args():
 
     # Options for StyleGAN2 training
     parser.add_argument('--no_lazy', action='store_true',
-                        help='Do not use lazy regularization')#lazy regulation每个16个mini-batch才进行一次R1正则化，这个应该不是不能收敛的理由
+                        help='Do not use lazy regularization')
     parser.add_argument("--d_reg_every", type=int, default=16,
                         help='Interval of applying R1 when lazy regularization is used')
     parser.add_argument("--lbd_r1", type=float, default=10, help='R1 regularization')
@@ -70,7 +70,7 @@ def parse_args():
                         help='When to start the exponential moving average of G (default: halflife_k)')
     parser.add_argument('--halflife_lr', default=0, type=int, help='Apply LR decay when > 0')
 
-    parser.add_argument('--use_nerf_proj', action='store_true', help='是否采用卷积来加速收敛')
+    parser.add_argument('--use_nerf_proj', action='store_true')
 
     # Options for logging specification
     parser.add_argument('--no_fid', action='store_true',
@@ -79,9 +79,9 @@ def parse_args():
                         help='Do not save GIF of sample generations from a fixed latent periodically during training')
     parser.add_argument('--n_eval_avg', default=3, type=int,
                         help='How many times to average FID and IS')
-    parser.add_argument('--print_every', help='', default=1000, type=int)#默认值改过了
-    parser.add_argument('--evaluate_every', help='', default=2000, type=int)#默认值改过了！
-    parser.add_argument('--save_every', help='', default=10000, type=int)#默认值改过了！
+    parser.add_argument('--print_every', help='', default=1000, type=int)
+    parser.add_argument('--evaluate_every', help='', default=2000, type=int)
+    parser.add_argument('--save_every', help='', default=10000, type=int)
     parser.add_argument('--comment', help='Comment', default='', type=str)
 
     # Options for resuming / fine-tuning
@@ -120,7 +120,7 @@ def _sample_generator(G, num_samples, enable_grad=True,imgs=None,illus=None):
             generated_data = G(x=imgs,input=latent_samples,illu=illus)
     return generated_data
 
-#把下面这些参数绑定到options中可以直接用
+
 @gin.configurable("options")
 def get_options_dict(dataset=gin.REQUIRED,
                      loss=gin.REQUIRED,
@@ -142,9 +142,6 @@ def get_options_dict(dataset=gin.REQUIRED,
     }
 
 def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
-    #opt是各种超参数，optimizer是worker建立的优化器，如果是resume的话是加载过之前的参数的
-    #如果当前设置的lr跟之前不一样，如果有warmup会将优化器的学习率更新为设置的lr
-    #如果没有warmup，halflife_lr又为0，学习率会更新成新的吗，并不会--->加了
 
     generator,g_ema=models
     opt_G=optimizers
@@ -163,7 +160,7 @@ def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
     for step in range(P.starting_step, opt['max_steps'] + 1):
         if step % P.evaluate_every == 0:
             val_images,val_target_images,val_illus=next(val_pair_loader)
-            val_images = val_images.cuda()#batch_size除以4
+            val_images = val_images.cuda()
             val_target_images=val_target_images.cuda()
             val_illus=val_illus.cuda()
             with torch.no_grad():
@@ -177,27 +174,15 @@ def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
             cur_lr_g = _update_lr(opt_G, step, opt["batch_size"], P.halflife_lr, opt["lr"])
             if cur_lr_g:
                 logger.log('LR Updated: [G %.10f] ' % (cur_lr_g))
-        #实现ema（权重移动平均）：权重还是原来的权重，只是权重更新时采用的梯度不是当前梯度，而是梯度的滑动平均
-        do_ema = (step * opt['batch_size']) > (P.ema_start_k * 1000)#过了一阵之后才采用滑动平均
-        accum = P.accum if do_ema else 0#accum就是滑动平均中的decay
+        do_ema = (step * opt['batch_size']) > (P.ema_start_k * 1000)
+        accum = P.accum if do_ema else 0
         accumulate(g_ema, generator, accum)
         generator.train()
        
         images,target_images,illus=next(pair_loader)
-        
-        # #-----检查一下数据是否加载成功---------
-        # print(f"检查一下数据是否加载成功")
         # illus=illus.unsqueeze(0)
         # illus=illus.permute(1,0,2,3)
-        # g=illus.repeat(1,3,1,1)
-        # for i in range(10):
-        #     print(f"现在的时间是{time.time()}")
-        #     images_PIL= transforms.ToPILImage()(images[i])
-        #     images_PIL.save(f"./load_image/train_set/{step}_{i}.png")
-        #     target_images_PIL= transforms.ToPILImage()(target_images[i])
-        #     target_images_PIL.save(f"./load_image/target_set/{step}_{i}.png")   
-        #     g_PIL=transforms.ToPILImage()(g[i])
-        #     g_PIL.save(f"./load_image/g_set/{step}_{i}.png")        
+        # g=illus.repeat(1,3,1,1)      
             
         images = images.cuda()#batch_size除以4
         target_images=target_images.cuda()
@@ -212,7 +197,6 @@ def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
         g_loss = train_fn["train2"](P, opt, target_images,gen_images)
         opt_G.zero_grad()
         g_loss.backward()
-        #查看梯度回传是否正常
         # for name, parms in generator.named_parameters():
         #     if 'style.' in name:	
         #         print(f"name: {name}, -->grad_requirs:{parms.requires_grad},-->grad_value:{parms.grad}")
@@ -230,15 +214,11 @@ def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
                 if len(values) > 0:
                     logger.scalar_summary('train/train2' + name, values[-1], step)#logger.scalar_summary(tag, value, idx)
             #wandb.log({"G_train2_loss": losses['G_train2_loss'][-1]}, step=step)
-            #-----查看模型更新梯度是否正常------
-            # for name, parms in generator.named_parameters():
-            #     if parms.requires_grad:
-            #         print(f"{name}更新的梯度为{parms.grad}")
+
         
             
         if step % P.evaluate_every == 0:
             #writer.add_scalars('stage1_train_val',{'g_train_loss': g_loss.item(), 'g_val_loss': g_val_loss.item()}, step)
-            #-----各评价指标------
             logger.log_dirname("Steps {}".format(step + 1))
             G_state_dict = generator.module.state_dict()
             Ge_state_dict = g_ema.module.state_dict()
@@ -248,16 +228,16 @@ def train(P,opt,train_fn,models,optimizers,pair_loader,val_pair_loader,logger):
             #     best_val_loss=g_val_loss
             #     torch.save(G_state_dict, logger.logdir + f'/gen_best_stage2.pt')
             #     torch.save(Ge_state_dict, logger.logdir + f'/gen_ema_best_stage2.pt')
-            #     torch.save({'epoch': step,'optim_G': opt_G.state_dict(),}, logger.logdir + f'/optim_stage2_best.pt')#模型当前参数
+            #     torch.save({'epoch': step,'optim_G': opt_G.state_dict(),}, logger.logdir + f'/optim_stage2_best.pt')
 
             if step % P.save_every == 0:
                 torch.save(G_state_dict, logger.logdir + f'/gen_{step}_stage2.pt')
                 torch.save(Ge_state_dict, logger.logdir + f'/gen_ema_{step}_stage2.pt')
-                torch.save({'epoch': step,'optim_G': opt_G.state_dict(),}, logger.logdir + f'/optim_stage2_{step}.pt')#模型当前参数
+                torch.save({'epoch': step,'optim_G': opt_G.state_dict(),}, logger.logdir + f'/optim_stage2_{step}.pt')
             torch.save({
                 'epoch': step,
                 'optim_G': opt_G.state_dict(),
-            }, logger.logdir + '/optim_stage2.pt')#模型当前参数
+            }, logger.logdir + '/optim_stage2.pt')
 
 
 
@@ -271,7 +251,6 @@ def worker(P):
     print(f"get_dataset(dataset=options['dataset'])为{get_dataset(dataset=options['dataset'])}")
     pair_set,resolution= get_dataset(dataset=options['dataset'])#"unlabeled_data1_LAB_presudo"
     val_pair_set,val_resolution=get_dataset(dataset='val_data')
-    # -----检查一下数据是否加载成功---------
     # for i in range(5):
     #     #print(f"现在的时间是{time.time()}")
     #     images_PIL= transforms.ToPILImage()(train_set[i][0])
@@ -299,13 +278,11 @@ def worker(P):
 
     P.accum = 0.5 ** (options['batch_size'] / (P.halflife_k * 1000))#accum是由这俩决定的
 
-    #-----加载模型结构---------
     from vit_generator_skip import vit_small,vit_my,vit_my_8
     #resolution = image_size[0]
     generator = vit_my_8(patch_size=16,noise=False)
     g_ema = vit_my_8(patch_size=16,noise=False)
-    #-----加载train1训练参数---------
-    #-----加载dino的预训练参数---------
+
     #print("Please use the `--pretrained_weights` argument to indicate the path of the checkpoint to evaluate.")
     url = None
     #vit_small patch_size=16
@@ -315,8 +292,7 @@ def worker(P):
         state_dict = torch.hub.load_state_dict_from_url(url="https://dl.fbaipublicfiles.com/dino/" + url)
         info_generator=generator.load_state_dict(state_dict, strict=False)
         info_g_ema=g_ema.load_state_dict(state_dict, strict=False)
-        print(f"generator的预训练参数加载结果为{info_generator}")
-        print(f"g_ema的预训练参数加载结果为{info_g_ema}")
+
 
     if P.resume:
         print(f"=> Loading checkpoint from '{P.resume}'")
@@ -324,9 +300,8 @@ def worker(P):
         state_Ge = torch.load(f"{P.resume}/gen_ema_stage2.pt")        
         info_generator=generator.load_state_dict(state_G,strict=False)
         info_g_ema=g_ema.load_state_dict(state_Ge,strict=False)
-        print(f"generator的train1参数加载结果为{info_generator}")
-        print(f"g_ema的train1参数加载结果为{info_g_ema}")
-    #print(f"成功加载train1参数")
+
+
     generator = generator.cuda()
     g_ema = g_ema.cuda()
     g_ema.eval()
@@ -357,7 +332,6 @@ def worker(P):
 
         # wandb.watch(generator)
         # #wandb.watch(discriminator)
-        #使用shutil.copy2()方法将文件从源复制到目标
         shutil.copy2(P.gin_config, f"{logger.logdir}/config.gin")
     P.logdir = logger.logdir
     P.eval_seed = np.random.randint(10000)
