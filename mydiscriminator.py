@@ -247,7 +247,6 @@ class SkipDiscriminator(nn.Module):
         d = self.last_linear(features)
         return d
 
-#在目前的设定下，ResidualDiscriminatorP和ResidualDiscriminator是一样的
 class ResidualDiscriminatorP(BaseDiscriminator):
     def __init__(self, size, channel_multiplier=2, blur_kernel=[1, 3, 3, 1], small32=False,input_channel=6, **kwargs):
         if small32:
@@ -287,18 +286,18 @@ class ResidualDiscriminatorP(BaseDiscriminator):
         self.layers = nn.Sequential(*layers)
         self.last_conv = ConvLayer(in_channel + 1, channels[4], 3)
 
-    def penultimate(self, input):#重写了父类的虚拟方法
+    def penultimate(self, input):
         #input=self.mid(input)
         #print(f"input的shape为{input.shape}")
         input = input * 2. - 1.
         #print(f"input的shape为{input.shape}")
         out = self.layers(input)
         #print(f"out的shape为{out.shape}")
-        out = _minibatch_stddev_layer(out)#计算完小批量的标准差后与特征图沿通道拼接起来，因此下一层的输入通道就要比之前多1
+        out = _minibatch_stddev_layer(out)
         #print(f"out的shape为{out.shape}")
-        out = self.last_conv(out)#到这一步跟ResidualDiscriminator还是一样的
+        out = self.last_conv(out)
         #print(f"out的shape为{out.shape}")
-        out = out.view(out.size(0), -1)#这属于把一个样本直接拉平了，为什么要这么搞？
+        out = out.view(out.size(0), -1)
         #print(f"out的shape为{out.shape}")
 
         return out
