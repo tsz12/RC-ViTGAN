@@ -1,5 +1,5 @@
 # RC-ViTGAN
-![这是图片](/assets/img/fig2.jpg "Overview of RC-ViTGAN![image](https://github.com/tsz12/RC-ViTGAN/assets/65204135/c506ef40-cb1f-47f5-bcb6-5e687f808261)
+![这是图片](/assets/fig2.pdf "Overview of RC-ViTGAN![image](https://github.com/tsz12/RC-ViTGAN/assets/65204135/c506ef40-cb1f-47f5-bcb6-5e687f808261)
 ")
 ## Dataset
 RC500: https://drive.google.com/file/d/1x3tZmPw0IS9fxoKXel4xGT38nK8zd9hR/view?usp=sharing  
