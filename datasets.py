@@ -9,38 +9,10 @@ from skimage.color import rgb2lab, lab2rgb
 import matplotlib
 import pickle
 DATA_PATH = os.environ.get('DATA_DIR', 'data/')
-#这个DATA_PATH是拿来干嘛的--》表示下载数据文件的位置，关键是这个DATA_DIR从哪来
-#os.environ.get是得到环境变量的一个方法，如果有DATA_DIR这个环境变量就取得它对应的值返回，没有就返回后面那个默认值
-
-
-# #通过继承 torch.utils.data.Dataset 实现用户自定义读取数据集然后用 DataLoader来并行加载
 # from torch.utils.data import Dataset
 # train_dir = "../data/unlabeled_data/train"
 # var_dir = "../data/unlabeled_data/test"
 
-
-
-# class unlabel(Dataset):
-#     def __init__(self, path):
-#         data_root = pathlib.Path(path)
-#         all_image_paths = list(data_root.glob('*/*'))
-#         self.all_image_paths = [str(path) for path in all_image_paths]
-#         label_names = sorted(item.name for item in data_root.glob('*/') if item.is_dir())
-#         label_to_index = dict((label, index) for index, label in enumerate(label_names))
-#         self.all_image_labels = [label_to_index[path.parent.name] for path in all_image_paths]
-
-
-#     def __getitem__(self, index):
-#         img = cv.imread(self.all_image_paths[index])
-#         img = cv.resize(img, (128, 128))
-#         img = np.transpose(img, [2, 0, 1])
-#         label = self.all_image_labels[index]
-#         img = torch.tensor(img, dtype=torch.float32)
-#         label = torch.tensor(label)
-#         return img, label
-
-#     def __len__(self):
-#         return len(self.all_image_paths)
 import glob
 import random
 import os
@@ -51,7 +23,7 @@ from PIL import Image
 import torchvision.transforms as transforms
 from torchvision.io import read_image
 
-class MyImageDataset(Dataset):#把一组图片经过处理变成两组返回
+class MyImageDataset(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -59,11 +31,8 @@ class MyImageDataset(Dataset):#把一组图片经过处理变成两组返回
         self.target_transform=target_transform
 
 
-    def __getitem__(self, idx):#通过index去返回样本
-        #print(f"self.img_labels.iloc[idx,1]的数据类型为{type(str(self.img_labels.iloc[idx,1]))}")
+    def __getitem__(self, idx):
         img_path=os.path.join(self.img_dir,str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
-        #print(f"读取图片的路径为{img_path}")
-        #image=read_image(img_path)
         image=Image.open(img_path).convert('RGB')
         label=self.img_labels.iloc[idx,1]
         train_image=self.transform(image)
@@ -75,7 +44,7 @@ class MyImageDataset(Dataset):#把一组图片经过处理变成两组返回
     def __len__(self):
         return len(self.img_labels)   
 
-class MyLabeledImageDataset(Dataset):#把两组图片经过处理后返回
+class MyLabeledImageDataset(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -83,12 +52,9 @@ class MyLabeledImageDataset(Dataset):#把两组图片经过处理后返回
         self.target_transform=target_transform
 
 
-    def __getitem__(self, idx):#通过index去返回样本
-        #print(f"self.img_labels.iloc[idx,1]的数据类型为{type(str(self.img_labels.iloc[idx,1]))}")
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'train',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'target',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
-        #print(f"读取图片的路径为{img_path}")
-        #image=read_image(img_path)
         train_image=Image.open(img_path_train).convert('RGB')
         target_image=Image.open(img_path_target).convert('RGB')
         label=self.img_labels.iloc[idx,1]
@@ -100,36 +66,8 @@ class MyLabeledImageDataset(Dataset):#把两组图片经过处理后返回
 
     def __len__(self):
         return len(self.img_labels)   
-# class MySemiLabeledImageDataset(Dataset):
-#     def __init__(self, annotations_lfile,annotations_ufile, img_ldir,img_udir,transform=None,target_transform=None,utransform=None):
-#         self.img_labels_l=pd.read_csv(annotations_lfile)
-#         self.img_labels_u=pd.read_csv(annotations_ufile)
-#         self.img_dir_l=img_ldir
-#         self.img_dir_u=img_udir
-#         self.transform=transform
-#         self.target_transform=target_transform
-#         self.transform_u=utransform
 
-#     def __getitem__(self, idx):#通过index去返回样本
-#         #print(f"self.img_labels.iloc[idx,1]的数据类型为{type(str(self.img_labels.iloc[idx,1]))}")
-#         img_path_ltrain=os.path.join(self.img_dir_l,'train',str(self.img_labels_l.iloc[idx,1]),self.img_labels_l.iloc[idx,0])
-#         img_path_ltarget=os.path.join(self.img_dir_l,'target',str(self.img_labels_l.iloc[idx,1]),self.img_labels_l.iloc[idx,0])
-#         img_path_utrain=os.path.join(self.img_dir_u,'train',str(self.img_labels_u.iloc[idx,1]),self.img_labels_u.iloc[idx,0])
-#         #print(f"读取图片的路径为{img_path}")
-#         #image=read_image(img_path)
-#         train_image_l=Image.open(img_path_ltrain).convert('RGB')
-#         target_image_l=Image.open(img_path_ltarget).convert('RGB')
-#         train_image_u=Image.open(img_path_utrain).convert('RGB')
-#         train_image=self.transform(train_image_l)
-#         target_image=self.target_transform(target_image_l)           
-#         train_image_u=self.transform_u(train_image_u)
-
-#         return train_image, target_image,train_image_u
-
-    # def __len__(self):
-    #     return len(self.img_labels_l)+len(self.img_labels_u)  
-
-class MyGANImageDataset(Dataset):#把一组图片经过处理变成两组返回
+class MyGANImageDataset(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None,gan_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -138,12 +76,9 @@ class MyGANImageDataset(Dataset):#把一组图片经过处理变成两组返回
         self.gan_transform=gan_transform
 
 
-    def __getitem__(self, idx):#通过index去返回样本
-        #print(f"self.img_labels.iloc[idx,1]的数据类型为{type(str(self.img_labels.iloc[idx,1]))}")
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'train',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'target',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
-        #print(f"读取图片的路径为{img_path}")
-        #image=read_image(img_path)
         train_image=Image.open(img_path_train).convert('RGB')
         target_image=Image.open(img_path_target).convert('RGB')
         label=self.img_labels.iloc[idx,1]
@@ -161,7 +96,6 @@ def get_illuminance(img):
     """
     Get the luminance of an image. Shape: (h, w)
     """
-    #print(f"img大小为{img.shape}")
     img = img.permute(1, 2, 0)  # (h, w, channel) 
     img = img.numpy()
     img = img.astype(np.float) / 255.0
@@ -169,7 +103,7 @@ def get_illuminance(img):
     img_L = img_LAB[:,:,0]  # luminance  # (h, w)
     return torch.from_numpy(img_L)
    
-class MyColorTransferImageDataset(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDataset(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None,illu_transform=None,cho_illu_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -179,7 +113,7 @@ class MyColorTransferImageDataset(Dataset):#把一组图片经过处理变成两
         self.cho_illu_transform=cho_illu_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         palette_path=os.path.join(self.img_dir,'palette/',str(self.img_labels.iloc[idx,1]))
@@ -206,7 +140,7 @@ class MyColorTransferImageDataset(Dataset):#把一组图片经过处理变成两
     def __len__(self):
         return len(self.img_labels) 
 
-class MyColorTransferImageDataset1(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDataset1(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -214,7 +148,7 @@ class MyColorTransferImageDataset1(Dataset):#把一组图片经过处理变成�
         self.target_transform=target_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'train/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'presudo_target/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         #print(f"img_path_train为{img_path_train}")
@@ -234,7 +168,7 @@ class MyColorTransferImageDataset1(Dataset):#把一组图片经过处理变成�
     def __len__(self):
         return len(self.img_labels)   
 
-class MyColorTransferImageDataset2(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDataset2(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -242,7 +176,7 @@ class MyColorTransferImageDataset2(Dataset):#把一组图片经过处理变成�
         self.target_transform=target_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'train/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'presudo_target/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         #print(f"img_path_train为{img_path_train}")
@@ -263,7 +197,7 @@ class MyColorTransferImageDataset2(Dataset):#把一组图片经过处理变成�
     def __len__(self):
         return len(self.img_labels)   
     
-class MyColorTransferImageDataset3(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDataset3(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -271,7 +205,7 @@ class MyColorTransferImageDataset3(Dataset):#把一组图片经过处理变成�
         self.target_transform=target_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'train/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'target/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         #print(f"img_path_train为{img_path_train}")
@@ -292,7 +226,7 @@ class MyColorTransferImageDataset3(Dataset):#把一组图片经过处理变成�
     def __len__(self):
         return len(self.img_labels)   
 
-class MyColorTransferImageDatasetval(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDatasetval(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -300,7 +234,7 @@ class MyColorTransferImageDatasetval(Dataset):#把一组图片经过处理变成
         self.target_transform=target_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'val/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'val_target/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         #print(f"img_path_train为{img_path_train}")
@@ -320,7 +254,7 @@ class MyColorTransferImageDatasetval(Dataset):#把一组图片经过处理变成
     def __len__(self):
         return len(self.img_labels)   
     
-class MyColorTransferImageDatasetvalstage3(Dataset):#把一组图片经过处理变成两组返回
+class MyColorTransferImageDatasetvalstage3(Dataset):
     def __init__(self, annotations_file, img_dir,transform=None,target_transform=None):
         self.img_labels=pd.read_csv(annotations_file)
         self.img_dir=img_dir
@@ -328,7 +262,7 @@ class MyColorTransferImageDatasetvalstage3(Dataset):#把一组图片经过处理
         self.target_transform=target_transform
  
 
-    def __getitem__(self, idx):#通过index去返回样本
+    def __getitem__(self, idx):
         img_path_train=os.path.join(self.img_dir,'val/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         img_path_target=os.path.join(self.img_dir,'val_target/',str(self.img_labels.iloc[idx,1]),self.img_labels.iloc[idx,0])
         #print(f"img_path_train为{img_path_train}")
@@ -349,8 +283,7 @@ class MyColorTransferImageDatasetvalstage3(Dataset):#把一组图片经过处理
 
     def __len__(self):
         return len(self.img_labels)   
-    
-#这里传入的dataset是一个标签，标记采用哪个数据集
+
 def get_dataset(dataset):
     if dataset == 'labeled_data':
         image_size = (224, 224, 3)
@@ -371,7 +304,7 @@ def get_dataset(dataset):
         val_dir = os.path.join(DATA_PATH, 'labeled_data/val')
         target_dir = os.path.join(DATA_PATH, 'labeled_data/target')
         img_dir=os.path.join(DATA_PATH, 'labeled_data/')
-        annotations_file="img_l.csv"#这个annotations_file需要换一换
+        annotations_file="img_l.csv"
         train_set = datasets.ImageFolder(train_dir, train_transform)
         target_set = datasets.ImageFolder(target_dir, target_transform)
         val_set = datasets.ImageFolder(val_dir, test_transform)
@@ -398,7 +331,6 @@ def get_dataset(dataset):
         train_dir = os.path.join(DATA_PATH, 'unlabeled_data/train/')
         val_dir = os.path.join(DATA_PATH, 'unlabeled_data/val/')
         annotations_file="img.csv"
-        #print(f"训练数据集为{train_dir},验证数据集为{val_dir}")
         train_set = datasets.ImageFolder(train_dir, train_transform)
         target_set=datasets.ImageFolder(train_dir, target_transform)
         val_set = datasets.ImageFolder(val_dir, test_transform)
@@ -429,11 +361,10 @@ def get_dataset(dataset):
 
         return pair_set,image_size
     
-    #Stage2所用数据集！！！！！！
     elif dataset=='unlabeled_data1_LAB_presudo':
         image_size = (128, 128, 3)
         train_transform = transforms.Compose([
-            transforms.ToPILImage(),#这里默认输入是RGB
+            transforms.ToPILImage(),
             transforms.Resize((224, 224)),
             transforms.ToTensor()
         ])
@@ -451,11 +382,10 @@ def get_dataset(dataset):
 
         return pair_set,image_size
     
-    #Stage3所用数据集！！！！
     elif dataset=='unlabeled_data1_LAB_presudo_stage3':
         image_size = (128, 128, 3)
         train_transform = transforms.Compose([
-            transforms.ToPILImage(),#这里默认输入是RGB
+            transforms.ToPILImage(),
             transforms.Resize((224, 224)),
             transforms.ToTensor()
         ])
@@ -500,16 +430,14 @@ def get_dataset(dataset):
         ltrain_ltarget_pair_set=MyLabeledImageDataset(annotations_file_l, img_dir_l,transform=en_zero_transform,target_transform=de_zero_transform)
         ltrain_lgan_ltarget_pair_set=MyGANImageDataset(annotations_file_l, img_dir_l,transform=en_zero_transform,target_transform=de_zero_transform,gan_transform=gan_transform)
         unlabeled_set=datasets.ImageFolder(img_dir_u_train, en_zero_transform)
-        #print(f"训练数据集为{train_dir},验证数据集为{val_dir}")
      
 
         return ltrain_pair_set,ltarget_pair_set,utrain_pair_set,ltrain_lgan_ltarget_pair_set,unlabeled_set,image_size
     
-    #Stage3所用数据集！！！！！
     elif dataset=='labeled_data_stage3':
         image_size = (128, 128, 3)
         train_transform = transforms.Compose([
-            transforms.ToPILImage(),#这里默认输入是RGB
+            transforms.ToPILImage(),
             transforms.Resize((224, 224)),
             transforms.ToTensor()
         ])
@@ -561,8 +489,7 @@ def get_dataset(dataset):
         test_train1_train23_ill_set=pair_set=MyColorTransferImageDataset(annotations_file_test, img_dir_test,transform=en_train1_transform,target_transform=en_train23_transform)
 
         return test_train1_train23_ill_set
-    
-    #测试所用数据集！！！！！
+
     elif dataset=='test_data_LAB_palette':
         
         en_train1_transform = transforms.Compose([
@@ -593,11 +520,10 @@ def get_dataset(dataset):
 
         return test_train1_train23_ill_set
 
-    #stage2所用验证数据集
     elif dataset=='val_data':  
         image_size = (128, 128, 3)
         train_transform = transforms.Compose([
-            transforms.ToPILImage(),#这里默认输入是RGB
+            transforms.ToPILImage(),
             transforms.Resize((224, 224)),
             transforms.ToTensor()
         ])
@@ -614,11 +540,10 @@ def get_dataset(dataset):
         #pair_set=train_image, target_image,illu
 
         return pair_set,image_size
-    #stage3所用验证数据集MyColorTransferImageDatasetvalstage3
     elif dataset=='val_data_stage3':  
         image_size = (128, 128, 3)
         train_transform = transforms.Compose([
-            transforms.ToPILImage(),#这里默认输入是RGB
+            transforms.ToPILImage(),
             transforms.Resize((224, 224)),
             transforms.ToTensor()
         ])
@@ -635,8 +560,7 @@ def get_dataset(dataset):
         #pair_set=train_image,train128_image,target_image,illu
 
         return pair_set,image_size
-    
-    #计算fid所用的参考数据集
+
     elif dataset=='label_fid':
         image_size = (128, 128, 3)
         transform = transforms.Compose([
