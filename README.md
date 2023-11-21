@@ -1,5 +1,5 @@
 # RC-ViTGAN
-![Overview of RC-ViTGAN](/assets/fig2.png)
+![Overview of RC-ViTGAN](/assets/fig2.png "Overview of RC-ViTGAN")
 ## Dataset
 RC500: https://drive.google.com/file/d/1x3tZmPw0IS9fxoKXel4xGT38nK8zd9hR/view?usp=sharing  
 
