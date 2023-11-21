@@ -7,3 +7,5 @@ test_dataset: https://drive.google.com/file/d/1Y3_4tuNcGbzj5bYr2JWhniVvm6W6J-Gb/
 
 original_images: https://drive.google.com/file/d/1i9hv2yrG8cImo7In3KUiFnusn7GNC-7e/view?usp=drive_link  
 ## Results
+![Overview of RC-ViTGAN](/assets/fig2.png "Overview of RC-ViTGAN")
+![Qualitative Results of Ablation Study](/assets/fig6.png "Qualitative Results of Ablation Study")
