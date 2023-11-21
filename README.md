@@ -20,7 +20,9 @@ beta for EMA = (0.0, 0.99)
 
 Supervised Pre-training max_steps=100000  
 
-Adversarial Training max_steps=20000
+Adversarial Training max_steps=20000  
+## The quality of references has a significant impact on the model
+![reference_quality1](/assets/reference_quality1.png "reference_quality1")
 ## Training Pipeline
 ![Training Pipeline of RC-ViTGAN](/assets/fig3.png "Training Pipeline of RC-ViTGAN")
 ## Results
