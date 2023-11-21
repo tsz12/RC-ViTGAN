@@ -24,7 +24,11 @@ Adversarial Training max_steps=20000
 ## The quality of references has a significant impact on the model
 When there's a significant discrepancy between the color of the reference and that of the input image, it results in color distortion in the recolored image, causing unnaturalness.  
 
-![reference_quality1](/assets/reference_quality1.png "reference_quality1")
+![reference_quality1](/assets/reference_quality1.png "reference_quality1")  
+
+When an unrealistic color palette is provided, the model generates semantically unreasonable images, such as recoloring trees to blue.  
+
+![reference_quality2](/assets/reference_quality2.png "reference_quality2")
 ## Training Pipeline
 ![Training Pipeline of RC-ViTGAN](/assets/fig3.png "Training Pipeline of RC-ViTGAN")
 ## Results
