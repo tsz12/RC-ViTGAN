@@ -1,4 +1,4 @@
-# generate augmented images for training 生成用于训练的增强图像（扩展数据集）
+# generate augmented images for training 
 #    - input/: images with original palette
 #    - output/: images with new palette
 #    - old_palette/: pickled files of original palette 
@@ -31,8 +31,6 @@ import os
 #     #plt.title(f"Original {title} (in RGB)")
 #     #plt.show()
 
-#     # RGB -> HSV -> hue-shift 转换图像颜色的编码
-#     #H（色调）S（饱和度）V（明度）RGB面向硬件，HSV面向用户，这里应该是进行了一些转换又变为RGB
 #     img_HSV = matplotlib.colors.rgb_to_hsv(img)
 #     a_2d_index = np.array([[1,0,0] for _ in range(img_HSV.shape[1])]).astype('bool')
 #     img_HSV[:, a_2d_index] = (img_HSV[:, a_2d_index] + hue_shift) % 1
@@ -42,8 +40,7 @@ import os
 #     #plt.title(f"New {title} (in RGB)")
 #     #plt.show()
 
-#     # fixed original luminance固定原始亮度
-#     img = img.astype(np.float) / 255.0 #astype函数用于转换数据的数据类型
+#     img = img.astype(np.float) / 255.0 
 #     new_img = new_img.astype(np.float) / 255.0
 #     ori_img_LAB = rgb2lab(img)#from skimage.color import rgb2lab, lab2rgb
 #     new_img_LAB = rgb2lab(new_img)
@@ -64,7 +61,7 @@ import os
 #     count=0
 #     for j, path in enumerate(pathlist):
 #         count=count+1
-#     print(count) #dirpath子目录路径，file_count子目录中的文件个数
+#     print(count) 
 
 # print("target")
 # for i in range(0,22):
@@ -73,7 +70,7 @@ import os
 #     count=0
 #     for j, path in enumerate(pathlist):
 #         count=count+1
-#     print(count) #dirpath子目录路径，file_count子目录中的文件个数
+#     print(count) 
     
 # #pathlist = pathlib.Path("/datasets/dribbble_half/dribbble_half/data").glob("*.png")
 # for i in range(0,22):
@@ -90,16 +87,15 @@ import os
 #         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
-#         hue_shift = random.random()#这里应该是随机生成一个色调偏移的值
+#         hue_shift = random.random()
 #         augmented_image = augment_image(img, "Image", hue_shift)
 
-#         #cv2.imwrite(f'train/input/{str(i)}/{path.name}', img)#将原图像输入input
+#         #cv2.imwrite(f'train/input/{str(i)}/{path.name}', img)
 
-#         cv2.imwrite(f'data/unlabeled_data/presudo_target/{str(i)}/{path.name}', augmented_image)#将color augmentation后的图像输出到output
+#         cv2.imwrite(f'data/unlabeled_data/presudo_target/{str(i)}/{path.name}', augmented_image)
 
 
-
-# for i, path in enumerate(pathlist):#enumerate是列举的意思，i是序号，path是列举出的一个一个元素
+# for i, path in enumerate(pathlist):
 #     print(i)
 #     print(path)
 
@@ -109,12 +105,12 @@ import os
 #     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
 
 
-#     hue_shift = random.random()#这里应该是随机生成一个色调偏移的值
+#     hue_shift = random.random()
 #     augmented_image = augment_image(img, "Image", hue_shift)
 
-#     cv2.imwrite(f'train/input/{path.name}', img)#将原图像输入input
+#     cv2.imwrite(f'train/input/{path.name}', img)
 
-#     cv2.imwrite(f'train/output/{path.name}', augmented_image)#将color augmentation后的图像输出到output
+#     cv2.imwrite(f'train/output/{path.name}', augmented_image)
 for i in range(0,22):
     pathlist =[]
     isExists = os.path.exists("data/unlabeled_data/val/"+str(i))
