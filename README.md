@@ -22,6 +22,8 @@ Supervised Pre-training max_steps=100000
 
 Adversarial Training max_steps=20000  
 ## The quality of references has a significant impact on the model
+When there's a significant discrepancy between the color of the reference and that of the input image, it results in color distortion in the recolored image, causing unnaturalness.  
+
 ![reference_quality1](/assets/reference_quality1.png "reference_quality1")
 ## Training Pipeline
 ![Training Pipeline of RC-ViTGAN](/assets/fig3.png "Training Pipeline of RC-ViTGAN")
