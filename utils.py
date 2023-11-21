@@ -85,7 +85,7 @@ def load_pretrained_weights(model, pretrained_weights, checkpoint_key, model_nam
     else:
         print("Please use the `--pretrained_weights` argument to indicate the path of the checkpoint to evaluate.")
         url = None
-        if model_name == "vit_small" and patch_size == 16:#!!用的是这个
+        if model_name == "vit_small" and patch_size == 16:
             url = "dino_deitsmall16_pretrain/dino_deitsmall16_pretrain.pth"
         elif model_name == "vit_small" and patch_size == 8:
             url = "dino_deitsmall8_pretrain/dino_deitsmall8_pretrain.pth"
@@ -218,8 +218,8 @@ def fix_random_seeds(seed=31):
     """
     Fix random seeds.
     """
-    torch.manual_seed(seed)#设置CPU生成随机数的种子，方便复现结果
-    torch.cuda.manual_seed_all(seed)#设置GPU生成随机数的种子，方便复现结果
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
     np.random.seed(seed)
 
 
@@ -467,7 +467,7 @@ def setup_for_distributed(is_master):
 
 
 def init_distributed_mode(args):
-    # launched with torch.distributed.launch #当python -m torch.distributed.launch main_dino.py时会自动设置这些实现单机多卡的训练
+    # launched with torch.distributed.launch 
     if 'RANK' in os.environ and 'WORLD_SIZE' in os.environ:
         args.rank = int(os.environ["RANK"])
         args.world_size = int(os.environ['WORLD_SIZE'])
@@ -601,7 +601,6 @@ class MultiCropWrapper(nn.Module):
     forward passes = number of different resolutions used. We then
     concatenate all the output features and run the head forward on these
     concatenated features.
-    对相同分辨率的augmment使用同一个前向过程,再将不同前向过程的输出拼接起来
     """
     def __init__(self, backbone, head):
         super(MultiCropWrapper, self).__init__()
@@ -612,19 +611,13 @@ class MultiCropWrapper(nn.Module):
 
     def forward(self,x,num_sample):
         # convert to list
-        #x应为图片的list，也就是各种图像增强组合形成的list?
         if not isinstance(x, list):
             x = [x]
-        # for inp in x:
-        #     print(f"数据增强的形状为{inp.shape}")
-        #     print(f"torch.unique_consecutive后为{torch.unique_consecutive(torch.tensor([inp.shape[-1] for inp in x]),return_counts=True,)}")
-        #     #不也就两个torch.Size([3, 128, 128])吗？----》因为是teacher网络，所以输入只有两个最大分辨率的数据增强（弱增强）
         idx_crops = torch.cumsum(torch.unique_consecutive(
             torch.tensor([inp.shape[-1] for inp in x]),
             return_counts=True,
         )[1], 0)#2
         #print(f"idx_crops为{idx_crops}")
-        #torch.unique_consecutive:消除连续的重复值
 
         start_idx, output = 0, torch.empty(0).to(x[0].device)
         #print(f"start_idx为{start_idx}")
@@ -632,9 +625,7 @@ class MultiCropWrapper(nn.Module):
         #print(f"idx_crops为{idx_crops}")
         evey_num_sample=0
         for i,end_idx in enumerate(idx_crops):
-            #print(f"输入self.backbone.sample_latent的num_sample为{num_sample}")
             evey_num_sample=int(num_sample*(end_idx-start_idx)/(idx_crops[-1]))
-            #print(f"第{i}次forward的num_sample为{evey_num_sample}")
             latent_samples = self.backbone.sample_latent(evey_num_sample)
             _out = self.backbone(torch.cat(x[start_idx: end_idx]),latent_samples)
             # The output is a tuple with XCiT model. See:
@@ -645,7 +636,6 @@ class MultiCropWrapper(nn.Module):
             output = torch.cat((output, _out))
             start_idx = end_idx
         # Run the head forward on the concatenated features.
-        #print(f"主体部分输出的大小为{output.shape}")
         return self.head(output)
 
 
@@ -936,39 +926,30 @@ def fwrite(filename: str, text: str):
     f.write(text+"\n")
     f.close()
 
-#这个函数的主要作用是把dataloader变成了一个生成器
 def cycle(dataloader, distributed=False):
     epoch = 0
     while True:
         for images, targets in dataloader:
             yield images, targets
-        #yield的函数则返回一个可迭代的 generator（生成器）对象，
-        #你可以使用for循环或者调用next()方法遍历生成器对象来提取结果。
         epoch += 1
         if distributed:
             dataloader.sampler.set_epoch(epoch)
 
 
-#这个函数的主要作用是把dataloader变成了一个生成器
 def cycle3(dataloader, distributed=False):
     epoch = 0
     while True:
         for images, targets,illu in dataloader:
             yield images,targets,illu
-        #yield的函数则返回一个可迭代的 generator（生成器）对象，
-        #你可以使用for循环或者调用next()方法遍历生成器对象来提取结果。
         epoch += 1
         if distributed:
             dataloader.sampler.set_epoch(epoch)
 
-#这个函数的主要作用是把dataloader变成了一个生成器
 def cycle4(dataloader, distributed=False):
     epoch = 0
     while True:
         for images, targets,illu,real_images in dataloader:
             yield images,targets,illu,real_images
-        #yield的函数则返回一个可迭代的 generator（生成器）对象，
-        #你可以使用for循环或者调用next()方法遍历生成器对象来提取结果。
         epoch += 1
         if distributed:
             dataloader.sampler.set_epoch(epoch)
