@@ -23,19 +23,18 @@ import torch.nn as nn
 from torch.nn import functional as F
 from utils import trunc_normal_
 
-#将vit改成vit_generator所需要的材料
 from stylegan2.op import FusedLeakyReLU, conv2d_gradfix
 from layers import PixelNorm, Upsample, Blur, EqualConv2d
-from layers import EqualLinear, LFF#分别为1*1的卷积和LFF正则化
+from layers import EqualLinear, LFF
 from stylegan2.vit_common import SpectralNorm, FeedForward
 from stylegan2.vit_cips import CIPSGenerator
 from stylegan2.op import FusedLeakyReLU
-from stylegan2.generator import StyleLayer, ToRGB#用到了StyleGAN2的mapping network和toRGB block
+from stylegan2.generator import StyleLayer, ToRGB
 #from einops import rearrange, repeat
 #from einops.layers.torch import Rearrange
 
 
-def drop_path(x, drop_prob: float = 0., training: bool = False):#drop掉一部分样本前进的path---->在一个batch里随机去除一部分样本(设为0)
+def drop_path(x, drop_prob: float = 0., training: bool = False):
     if drop_prob == 0. or not training:
         return x
     keep_prob = 1 - drop_prob
@@ -57,7 +56,7 @@ class DropPath(nn.Module):
         return drop_path(x, self.drop_prob, self.training)
 
 
-class Mlp(nn.Module):#有一个隐藏层的多层感知机
+class Mlp(nn.Module):
     def __init__(self, in_features, hidden_features=None, out_features=None, act_layer=nn.GELU, drop=0.,spectral_norm = True):
         super().__init__()
         out_features = out_features or in_features
@@ -81,16 +80,16 @@ class Mlp(nn.Module):#有一个隐藏层的多层感知机
         return x
 
 
-class Attention(nn.Module):#自注意力本身是不需要参数的
+class Attention(nn.Module):
     def __init__(self, dim, num_heads=8, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0.,l2_attn = True,spectral_norm = True):
         super().__init__()
         self.num_heads = num_heads
         head_dim = dim // num_heads
         self.scale = qk_scale or head_dim ** -0.5
-        #self.temperature = nn.Parameter(torch.FloatTensor([1.0]))#vit_generator特有
-        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)#将一个embedding投影成q,k,v三份
+        #self.temperature = nn.Parameter(torch.FloatTensor([1.0]))
+        self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
         self.attn_drop = nn.Dropout(attn_drop)
-        self.proj = nn.Linear(dim, dim)#将输出进行一次投影
+        self.proj = nn.Linear(dim, dim)
         self.proj_drop = nn.Dropout(proj_drop)
         #self.l2_attn=l2_attn
         #self.spectral_norm =spectral_norm
@@ -100,7 +99,7 @@ class Attention(nn.Module):#自注意力本身是不需要参数的
         #     self.proj = SpectralNorm(self.proj)    
 
     def forward(self, x):
-        B, N, C = x.shape#batchsize,一个样本包含N个C维向量
+        B, N, C = x.shape
         qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
         q, k, v = qkv[0], qkv[1], qkv[2]
 
@@ -124,8 +123,7 @@ class Attention(nn.Module):#自注意力本身是不需要参数的
         x = self.proj_drop(x)
         return x, attn
 
-#AdaIN----->vitgan特有
-#用vit_small的话它统一的隐向量维度就和StyleGAN一样了，都为384
+#AdaIN----->vitgan
 class SelfModulatedLayerNorm(nn.Module):
     def __init__(self, dim, modulated=False):
         super().__init__()
@@ -138,62 +136,48 @@ class SelfModulatedLayerNorm(nn.Module):
         self.mlp_gamma = EqualLinear(dim, dim, activation='linear',modulated=modulated)
         self.mlp_beta = EqualLinear(dim, dim, activation='linear',modulated=modulated)  
 
-        #self.mlp_gamma和self.mlp_beta都是为了处理latent，scale直接给了权重而不是具体的数据
 
     def forward(self, inputs):
-        #对positional embedding进行调制
-        x, cond_input = inputs#cond_input为torch.Size([bz, 384]),x为torch.Size([64, 一张图被切成的块数+1, 384])
-        #这里虽然叫cond_input其实就是latent（输入的条件，可不就是latent吗）
+
         # print(f"cond_input为{cond_input.shape}")
         # print(f"x为{x.shape}")
         bs = x.shape[0]
         cond_input = cond_input.reshape((bs, -1))#cond_input为torch.Size([21, 384])
         #print(f"cond_input为{cond_input.shape}")
-        #cond_input原大小是[b, 2, w, h]，将其按bs展开成二维张量，一个batch对应一个长度为384的向量
 
         '''
         self.mlp_gamma = SpectralNorm(EqualLinear(dim, dim, activation='linear'))
-        EqualLinear返回的是一个module,前向过程为forward(self, input)
         self.mlp_beta = SpectralNorm(EqualLinear(dim, dim, activation='linear'))
-        if SpectralNorm为false的话就没有外面的SpectralNorm
         '''
-        #cond_inout为Epos，也为h0
+
         #print(f"cond_input的形状为{cond_input.shape}")
-        gamma = self.mlp_gamma(cond_input)#.to(x.device)#self.mlp_gamma,self.mlp_beta都是参数可学习的线性层
+        gamma = self.mlp_gamma(cond_input)#.to(x.device)
         gamma = gamma.reshape((bs, 1, -1))
         beta = self.mlp_beta(cond_input)#.to(x.device)
-        beta = beta.reshape((bs, 1, -1))#-1表示维度值用其它维度决定
+        beta = beta.reshape((bs, 1, -1))
         #print(f"gamma为{gamma.shape}---beta为{beta.shape}")
         out = self.param_free_norm(x)#LayerNorm
-        #print(f"输出的out形状为{out.shape}")
         #print(f"out在{out.device},gamma在{gamma.device},beta在{beta.device}")
-        #print(f"gamma为{gamma},beta为{beta}")
         #out1=out
-        #print(f"调制前out为{out}")
         out = out * (1.0 + gamma) + beta
-        #print(f"调制前后out相等吗{out==out1}")
-        #print(f"out出现NaN了吗{torch.isnan(out).any()}")
+
         return out
     
 class Block(nn.Module):
     def __init__(self, dim, num_heads, mlp_ratio=4., qkv_bias=False, qk_scale=None, drop=0., attn_drop=0.,
                  drop_path=0., act_layer=nn.GELU, norm_layer=nn.LayerNorm,modulated=False):
         super().__init__()
-        self.norm1 = SelfModulatedLayerNorm(dim,modulated=modulated)#这里要改成SelfModulatedLayerNorm
+        self.norm1 = SelfModulatedLayerNorm(dim,modulated=modulated)
         self.attn = Attention(
             dim, num_heads=num_heads, qkv_bias=qkv_bias, qk_scale=qk_scale, attn_drop=attn_drop, proj_drop=drop)
-        #vitgan中好像没有drop_path
         self.drop_path = DropPath(drop_path) if drop_path > 0. else nn.Identity()
         self.norm2 = SelfModulatedLayerNorm(dim,modulated=modulated)
         mlp_hidden_dim = int(dim * mlp_ratio)
         self.mlp = Mlp(in_features=dim, hidden_features=mlp_hidden_dim, act_layer=act_layer, drop=drop)
 
     def forward(self, inputs,return_attention=False):
-        #print(f"==============block内部的输入输出大小===============")
         #print(f"inputs的shape为{len(inputs)}")
         x,latent=inputs
-        #print(f"x的shape为{x.shape}")
-        #print(f"latent的shape为{latent.shape}")
         x=self.norm1([x,latent])
         #print(f"x为{x.shape}")
         #print(f"self.attn(x)为{type(self.attn(x))}")
@@ -218,7 +202,7 @@ class SinActivation(nn.Module):
     def forward(self, x):
         return torch.sin(x)
     
-class PatchEmbed(nn.Module):#投影成embedding再拉直
+class PatchEmbed(nn.Module):
     """ Image to Patch Embedding
     """
     #def __init__(self, img_size=224, patch_size=16, in_chans=3, embed_dim=768):
@@ -239,7 +223,6 @@ class PatchEmbed(nn.Module):#投影成embedding再拉直
         x=self.activation(x)
         return x    
     
-# class Mid(nn.Module):#用于encoder和decoder之间的衔接
 #     def __init__(self, input_size=[224], output_size=[128],patch_size=16, in_chans=3, embed_dim=384):
 #         super().__init__()
 
@@ -257,7 +240,6 @@ class VisionTransformer(nn.Module):
         self.modulated=modulated
         self.g_decoder=g_decoder
         self.noise_injection=noise_injection
-        #z转化成w的全连接网络
         layers = [PixelNorm()]
         for i in range(n_mlp):
             layers.append(EqualLinear(embed_dim, embed_dim,
@@ -265,14 +247,14 @@ class VisionTransformer(nn.Module):
                                       activation='fused_lrelu'))                                      
         self.style = nn.Sequential(*layers)#mapping network
         #self.activation = SinActivation()
-        self.num_features = self.embed_dim = embed_dim#因为最后是用一个[cls] embedding去预测
+        self.num_features = self.embed_dim = embed_dim
 
         self.patch_embed = PatchEmbed(
             img_size=en_img_size[0], patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim)
-        num_patches = self.patch_embed.num_patches#一张图被分为多少个patch
+        num_patches = self.patch_embed.num_patches
 
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
-        self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + 1, embed_dim))#还要加上cls_token对应那一个
+        self.pos_embed = nn.Parameter(torch.zeros(1, num_patches + 1, embed_dim))
         #self.pos_embed = nn.Parameter(torch.zeros(1, num_patches, embed_dim))
         self.pos_drop = nn.Dropout(p=drop_rate)
 
@@ -284,10 +266,9 @@ class VisionTransformer(nn.Module):
             for i in range(depth)])
         #self.norm = norm_layer(embed_dim)
         self.convs = nn.ModuleList()
-        #这里相当于加入了多个权重调制层再加RGB
-        #根据y来构造图片
+
         de_img_size=self.de_img_size[0]
-        self.log_size = int(math.log(de_img_size, 2))#所以图片的大小最好是2的倍数
+        self.log_size = int(math.log(de_img_size, 2))
         self.cnn_channels = {
             8: 384,
             16: 384,
@@ -333,7 +314,6 @@ class VisionTransformer(nn.Module):
 
         self.norm = SelfModulatedLayerNorm(embed_dim,modulated=modulated)
 
-        # 衔接encoder和decoder
         self.e_num_patch_w=self.en_img_size[0]//self.patch_size
         self.e_num_patch_h=self.en_img_size[0]//self.patch_size
         self.d_num_patch_w=self.de_img_size[0]//self.patch_size
@@ -341,13 +321,11 @@ class VisionTransformer(nn.Module):
         self.en_size=self.e_num_patch_h*self.e_num_patch_w
         self.de_size=self.d_num_patch_h*self.d_num_patch_w
         #self.mid=nn.Linear(in_features=self.en_size,out_features=self.de_size)
-        #不丢cls_token
         self.mid=nn.Linear(in_features=self.en_size+1,out_features=self.de_size)
         #self.mid=nn.Conv2d(self.e_num_patch_w*self.e_num_patch_h,self.d_num_patch_w*self.d_num_patch_h) if self.e_num_patch_w != self.de_img_size else nn.Identity()
-        # Classifier head num_classes为0时相当于没有分类头
         self.head = nn.Linear(embed_dim, num_classes) if num_classes > 0 else nn.Identity()
 
-        trunc_normal_(self.pos_embed, std=.02)#只是一种初始化方法
+        trunc_normal_(self.pos_embed, std=.02)
         #trunc_normal_(self.cls_token, std=.02)
         self.apply(self._init_weights)
     
@@ -355,9 +333,9 @@ class VisionTransformer(nn.Module):
     def device(self):
         return self.lff.ffm.conv.weight.device
 
-    def _init_weights(self, m):#m只可能为全连接层或者层归一化层
+    def _init_weights(self, m):
         if isinstance(m, nn.Linear):
-            trunc_normal_(m.weight, std=.02)#用截断正态分布绘制的值填充输入张量(也就是m.weight)实现初始化
+            trunc_normal_(m.weight, std=.02)
             if isinstance(m, nn.Linear) and m.bias is not None:
                 nn.init.constant_(m.bias, 0)
         elif isinstance(m, nn.LayerNorm):
@@ -365,11 +343,9 @@ class VisionTransformer(nn.Module):
                 nn.init.constant_(m.bias, 0)
             if m.weight is not None:
                 nn.init.constant_(m.weight, 1.0)
-        #else:
-            #print(f"没有被初始化的权重为{m}")
+
 
     def interpolate_pos_encoding(self, x, w, h):
-        #x是包括cls_token和patch_token的，这个函数要为所有的token生成position token
         npatch = x.shape[1] - 1
         #npatch = x.shape[1]#64
         N = self.pos_embed.shape[1]-1
@@ -379,7 +355,6 @@ class VisionTransformer(nn.Module):
         class_pos_embed = self.pos_embed[:, 0]
         patch_pos_embed = self.pos_embed[:, 1:]
         #patch_pos_embed = self.pos_embed[:, 0:]
-        #print(f"patch_pos_embed的形状为{patch_pos_embed.shape}")
         dim = x.shape[-1]
         w0 = w // self.patch_embed.patch_size
         h0 = h // self.patch_embed.patch_size
@@ -389,9 +364,7 @@ class VisionTransformer(nn.Module):
         # a1=patch_pos_embed.reshape(1, int(math.sqrt(N)), int(math.sqrt(N)), dim).permute(0, 3, 1, 2)
         # a2=(w0 / math.sqrt(N), h0 / math.sqrt(N))
         # a3='bicubic'
-        # print(f"a1的类型为{type(a1)}")
-        # print(f"a2的类型为{type(a2)}")
-        # print(f"a3的类型为{type(a3)}")
+
         patch_pos_embed = nn.functional.interpolate(
             patch_pos_embed.reshape(1, int(math.sqrt(N)), int(math.sqrt(N)), dim).permute(0, 3, 1, 2),
             scale_factor=(w0 / math.sqrt(N), h0 / math.sqrt(N)),
@@ -407,13 +380,9 @@ class VisionTransformer(nn.Module):
     def prepare_tokens(self, x):
         B, nc, w, h = x.shape
         x = self.patch_embed(x)  # patch linear embedding
-        # print(f"x的类型为:{x.dtype}")
-        # print(f"x的大小为:{x.shape}")
         # add the [CLS] token to the embed patch tokens
         cls_tokens = self.cls_token.expand(B, -1, -1)
-        x = torch.cat((cls_tokens, x), dim=1)
-        # print(f"x的类型为:{x.dtype}")
-        # print(f"x的大小为:{x.shape}")        
+        x = torch.cat((cls_tokens, x), dim=1)      
         # add positional encoding to each token
         x = x + self.interpolate_pos_encoding(x, w, h)
 
@@ -424,68 +393,42 @@ class VisionTransformer(nn.Module):
     def device(self):
         return self.patch_embed.proj.weight.device
 
-    #这个是stylegan特有的用于加噪声的
     def sample_latent(self, num_samples):
-        # print(f"sample_latent读到的num_samples为:{num_samples}")
-        # print(f"sample_latent读到的self.embed_dim为:{self.embed_dim}")
-        # print(f"sample_latent读到的self.device为:{self.device}")
         return torch.randn(num_samples, self.embed_dim, device=self.device)
 
     def forward(self, x,
-                input,input_is_latent=False):#！！！！！！重点要修改这里
-        # print(f"读到的x形状为:{x.shape}")
-        # print(f"读到的input为:{input.shape}")
-        # print(f"============现在进入self.style层====================")
+                input,input_is_latent=False):
         if not self.modulated:
             latent=torch.zeros(x.shape[0],self.embed_dim).cuda()
         else:
-            #print(f"input出现NaN了吗{torch.isnan(input).any()}")
             latent = self.style(input) if not input_is_latent else input
-            #print(f"latent出现NaN了吗{torch.isnan(latent).any()}")
-        # print(f"读到的x为:{x.shape}")
-        # print(f"读到的input为:{input.shape}")
-        # print(f"latent的形状为:{latent.shape}")
         bs=latent.shape[0]
-        # print(f"x的类型为:{x.dtype}")
         x = self.prepare_tokens(x)
-        # print(f"prepare_tokens后x的形状为:{x.shape}")
-        #print(f"prepare_tokens后x出现NaN了吗{torch.isnan(x).any()}")
         for blk in self.blocks:
             x = blk([x,latent])
-            #print(f"block后x出现NaN了吗{torch.isnan(x).any()}")
         x = self.norm([x, latent])
 
         if not self.g_decoder:
             return x[:, 0]
         else: 
-            #========================encoder和decoder的衔接部分======================
-            #decoder成图片时不需要cls_token
             #x=x[:,1:]
-            #不丢cls_token
             #print(f"x.shape为{x.shape};x.shape[-1]为{x.shape[-1]}")
             #x.shape为torch.Size([21, 196, 384]);x.shape[-1]为384
-            #这里之后得到的应该是y=[y1,y2,...,yl]
-            #根据y来构造再着色图片---->下面部分图片的尺寸到底是咋变的?
             # num_patch_w=128//self.patch_size
             # num_patch_h=128//self.patch_size 
             #x=self.mid(x)
 
             x = x.permute((0, 2, 1))
-            #print(f"衔接q前x为{x}")
             x=self.mid(x)
             #x=nn.ReLU(x)
             x = x.permute((0, 2, 1))
-            #print(f"衔接后x为{x}")
-            #========================下面是decoder部分===============================
 
 
             #x = x.reshape((bs, self.patch_size, self.patch_size, x.shape[-1]))
-            #indices = torch.tensor(range(1, num_patch_w*num_patch_h+1))这里应该是之前错误的原因！！！
+            #indices = torch.tensor(range(1, num_patch_w*num_patch_h+1))
             indices = torch.tensor(range(0, self.d_num_patch_w*self.d_num_patch_h))
             indices = indices.to(torch.device(self.device))
             #print(f"indices为{indices}")
-            #这里相当于丢失了很多信息，只取了8*8个token，其实有14*14个
-            #print(f"索引前x的大小为:{x.shape}")
             x=torch.index_select(x, 1, indices)
             x = x.reshape((bs, self.d_num_patch_w, self.d_num_patch_h, x.shape[-1]))
             x = x.permute((0, 3, 1, 2))
@@ -493,11 +436,8 @@ class VisionTransformer(nn.Module):
             for conv_layer in self.convs:
                 x = conv_layer(x, latent)
                 #print(f"{self.device}:x的大小为{x.shape}")
-            #to_rgb只是用1*1卷积将特征转化成通道为3的图片，图片的大小不变，因此重点是修改前面的卷积层
             x = self.to_rgb(x, latent)
-            #print(f"to_rgb后x的大小为{x.shape}")
             return x
-            #return x#输出再着色之后的图片
 
     def get_last_selfattention(self, x):#！！！
         x = self.prepare_tokens(x)
@@ -588,6 +528,6 @@ class DINOHead(nn.Module):
 
     def forward(self, x):
         x = self.mlp(x)
-        x = nn.functional.normalize(x, dim=-1, p=2)#将某一个维度除以那个维度对应的范数(默认是2范数)。
+        x = nn.functional.normalize(x, dim=-1, p=2)
         x = self.last_layer(x)
         return x
