@@ -31,6 +31,6 @@ When an unrealistic color palette is provided, the model generates semantically 
 ![reference_quality2](/assets/reference_quality2.png "reference_quality2")
 ## Training Pipeline
 ![Training Pipeline of RC-ViTGAN](/assets/fig3.png "Training Pipeline of RC-ViTGAN")
-## Results
+## Additional Results
 ### Qualitative Results of Ablation Study
 ![Qualitative Results of Ablation Study](/assets/fig6.png "Qualitative Results of Ablation Study")
