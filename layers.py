@@ -12,7 +12,6 @@ from torch.nn import functional as F
 from stylegan2.op import upfirdn2d, fused_leaky_relu, conv2d_gradfix
 from stylegan2.op import FusedLeakyReLU
 
-#1*1卷积层，用来改变通道数
 class ConLinear(nn.Module):
     def __init__(self, ch_in, ch_out, is_first=False, bias=True):
         super(ConLinear, self).__init__()
@@ -44,8 +43,6 @@ class LFF(nn.Module):
         x = self.ffm(x)
         x = self.activation(x)
         return x
-
-#出自ProgressiveGAN，为了避免幅度失控，在每个卷积层后将每个像素的特征向量归一到单位长度。
 class PixelNorm(nn.Module):
     def __init__(self):
         super().__init__()
@@ -162,16 +159,6 @@ class EqualConv2d(nn.Module):
             f' {self.weight.shape[2]}, stride={self.stride}, padding={self.padding})'
         )
 
-"""
-首先可以把这个类理解为类型转换函数,
-将一个不可训练的类型Tensor转换成可以训练的类型parameter并将这个parameter绑定到这个module里面
-(net.parameter()中就有这个绑定的parameter,所以在参数优化的时候可以进行优化的),
-所以经过类型转换这个self.v变成了模型的一部分,成为了模型中根据训练可以改动的参数了。
-使用这个函数的目的也是想让某些变量在学习的过程中不断的修改其值以达到最优化
-经典的例子有注意力机制中的权重参数、Vision Transformer中的class token和positional embedding等
-"""
-#EqualLinear用于自调制层SLN,来源于StyleGAN2 
-#干的也是线性层的工作，只是self.weight和self.bias经过了一些平移缩放
 class EqualLinear(nn.Module):
     def __init__(
             self, in_dim, out_dim, bias_init=0, lr_mul=1, activation=None, use_bias=True,modulated=False
@@ -184,9 +171,9 @@ class EqualLinear(nn.Module):
             self.bias = nn.Parameter(torch.zeros(out_dim), requires_grad=False)
         else:
             #print(1)
-            self.weight = nn.Parameter(torch.randn(out_dim, in_dim).div_(lr_mul))#产生大小为(out_dim,in_dim)的随机张量
+            self.weight = nn.Parameter(torch.randn(out_dim, in_dim).div_(lr_mul))
             if use_bias:
-                self.bias = nn.Parameter(torch.zeros(out_dim))#长度为out_dim的0向量
+                self.bias = nn.Parameter(torch.zeros(out_dim))
             else:
                 self.bias = nn.Parameter(torch.zeros(out_dim), requires_grad=False)
         self.scale = (1 / math.sqrt(in_dim)) * lr_mul
