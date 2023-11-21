@@ -42,7 +42,7 @@ from mydiscriminator import ResidualDiscriminatorP#,Pix2PixDiscriminator
 from fid_score import my_fid_score
 
 from tensorboardX import SummaryWriter
-writer=SummaryWriter('out/log_dino_noSLN_smoothL1_Ds')#可视化数据放在这个文件夹
+writer=SummaryWriter('out/log_dino_noSLN_smoothL1_Ds')
 
 from collections import OrderedDict
 from ignite.engine import *
@@ -55,7 +55,6 @@ try:
     from third_party.fid.inception import InceptionV3
 except ImportError:
     from inception import InceptionV3
-#用于计算metrics的工具
 def eval_step(engine, batch):
     return batch
 default_evaluator = Engine(eval_step)
@@ -119,7 +118,7 @@ def parse_args():
                         help='When to start the exponential moving average of G (default: halflife_k)')
     parser.add_argument('--halflife_lr', default=0, type=int, help='Apply LR decay when > 0')
 
-    parser.add_argument('--use_nerf_proj', action='store_true', help='是否对LR采用预热策略Use warmup strategy on LR')
+    parser.add_argument('--use_nerf_proj', action='store_true')
 
     # Options for logging specification
     parser.add_argument('--no_fid', action='store_true',
@@ -128,13 +127,12 @@ def parse_args():
                         help='Do not save GIF of sample generations from a fixed latent periodically during training')
     parser.add_argument('--n_eval_avg', default=3, type=int,
                         help='How many times to average FID and IS')
-    parser.add_argument('--print_every', help='', default=1000, type=int)#默认值改过了
-    parser.add_argument('--evaluate_every', help='', default=2000, type=int)#默认值改过了！
-    parser.add_argument('--save_every', help='', default=10000, type=int)#默认值改过了！
+    parser.add_argument('--print_every', help='', default=1000, type=int)
+    parser.add_argument('--evaluate_every', help='', default=2000, type=int)
+    parser.add_argument('--save_every', help='', default=10000, type=int)
     parser.add_argument('--comment', help='Comment', default='', type=str)
 
     # Options for resuming / fine-tuning
-    # resume和finetune的区别在哪？
     parser.add_argument('--resume', default=None, type=str,
                         help='Path to logdir to resume the training')
     parser.add_argument('--finetune', default=None, type=str,
@@ -142,16 +140,14 @@ def parse_args():
 
     return parser.parse_args()
 
-
-def _update_warmup(optimizer, cur_step, warmup, lr):#这属于线性warm up
+def _update_warmup(optimizer, cur_step, warmup, lr):
     if warmup > 0:
         ratio = min(1., (cur_step + 1) / (warmup + 1e-8))
         lr_w = ratio * lr
         for param_group in optimizer.param_groups:
             param_group['lr'] = lr_w
 
-#lr每次decay为之前的一半好像比较合理？所以halflife_lr=batchsize*1000好像比较合理
-#改成每隔一万步变成了原来的一半
+
 def _update_lr(optimizer, cur_step, batch_size, halflife_lr, lr, mult=1.0):
     if halflife_lr > 0 and (cur_step > 0) and (cur_step % 10000 == 0):
         #ratio = (cur_step * batch_size) / halflife_lr
@@ -176,7 +172,6 @@ def r1_loss(D, images, augment_fn):
 
 def _sample_generator(G, num_samples, enable_grad=True,imgs=None,illus=None):
     latent_samples = G.sample_latent(num_samples)
-    #print(f"输入的x=imgs形状为:{imgs.device}输入的latent_samples的形状为{latent_samples.device}")
     if enable_grad:
         generated_data = G(x=imgs,input=latent_samples,illu=illus)
         #print(summary(G, imgs.shape,latent_samples.shape))
@@ -186,7 +181,6 @@ def _sample_generator(G, num_samples, enable_grad=True,imgs=None,illus=None):
             #print(summary(G, imgs.shape,latent_samples.shape))
     return generated_data
 
-#改训练的epoch这里也要改！！！
 @gin.configurable("options")
 def get_options_dict(dataset=gin.REQUIRED,
                      loss=gin.REQUIRED,
@@ -227,7 +221,6 @@ def train(P, opt, train_fn, models, optimizers,
     metrics={'fid_score':[]}
     # metrics={}
     # metrics['fid_score'] = FIDScore(opt['dataset'], opt['fid_size'], P.n_eval_avg)
-    #data_range取决于图片是否归一化，应该就是有归一化就是1.0没有就是225.0
     metric_SSIM = SSIM(data_range=1.0)
     metric_PSNR = PSNR(data_range=1.0)
     #metric_FID = FID(num_features=192, feature_extractor=default_model)
@@ -239,7 +232,7 @@ def train(P, opt, train_fn, models, optimizers,
     for step in range(P.starting_step, opt['max_steps'] + 1):
         if step % P.evaluate_every == 0:
             val_images,val_images128,val_target_images,val_illus=next(val_pair_loader)
-            val_images = val_images.cuda()#batch_size除以4
+            val_images = val_images.cuda()
             val_target_images=val_target_images.cuda()
             val_illus=val_illus.cuda()
             val_images128=val_images128.cuda()
@@ -251,10 +244,8 @@ def train(P, opt, train_fn, models, optimizers,
             #print(f"图片类型为{val_target_images.dtype}和{val_gen_images.dtype}")torch.float32
             #print(f"{torch.max(val_target_images)-torch.min(val_target_images)}")1.0
             #print(f"{torch.max(val_gen_images)-torch.min(val_gen_images)}")1.0
-            #这里是跟目标图片算的PSNR和SSIM，应该这样吧？
             state = default_evaluator.run([[val_gen_images,val_target_images]])
-            fid_value=my_fid_score(path_base='base_stats.npz', G=generator, size=val_images.size(0), batch_size=val_images.size(0), model=None, dims=192)#这里返回的应该就是实数吧？--是
-            #先不让fid_score来影响训练，只是单纯打印它
+            fid_value=my_fid_score(path_base='base_stats.npz', G=generator, size=val_images.size(0), batch_size=val_images.size(0), model=None, dims=192)
             metrics['fid_score'].append(fid_value)
             writer.add_scalar('stage2_val_SSIM',state.metrics['ssim'],step)
             writer.add_scalar('stage2_val_PSNR',state.metrics['psnr'],step)
@@ -276,52 +267,28 @@ def train(P, opt, train_fn, models, optimizers,
             cur_lr_ds = _update_lr(opt_DS, step, opt["batch_size"], P.halflife_lr, opt["lr_d"])
             if cur_lr_ds and cur_lr_g:
                 logger.log('LR Updated: [G %.10f][DS %.10f]' % (cur_lr_g,cur_lr_ds))
-        #实现ema（权重移动平均）：权重还是原来的权重，只是权重更新时采用的梯度不是当前梯度，而是梯度的滑动平均
-        do_ema = (step * opt['batch_size']) > (P.ema_start_k * 1000)#过了一阵之后才采用滑动平均125000之后才采用滑动平均
+        do_ema = (step * opt['batch_size']) > (P.ema_start_k * 1000)
         accum = P.accum if do_ema else 0
-        accumulate(g_ema, generator, accum)#accum就是滑动平均中的decay
+        accumulate(g_ema, generator, accum)
 
         # Start discriminator training
         generator.train()
         discriminator_single.train()
-
-        
-
-
-
-        
-        images,target_images,illus,real_images=next(presudo_pair_loader)#这里的illus其实是改变了尺寸的训练图片
+        images,target_images,illus,real_images=next(presudo_pair_loader)
         images=images.cuda()
         target_images=target_images.cuda()
         illus=illus.cuda()
         real_images=real_images.cuda()
-
-
-
-
-        #有标签的原图和有标签的目标图对
         ltrain_images, ltarget_images,lillus,lgan_images = next(ltrain_ltarget_pair_loader)
         ltrain_images=ltrain_images.cuda()
         ltarget_images=ltarget_images.cuda()
         lillus=lillus.cuda()
         lgan_images=lgan_images.cuda()
-
-
-
-
-
-
-
-
         set_grad(generator, False)
         set_grad(discriminator_single, True)
-
-        #条件图片和生成图片对
         ugen_images = _sample_generator(generator, images.size(0),enable_grad=True,imgs=images,illus=illus)
 
-
-
-        #只用ds
+        #ds
         ds_loss, ds_aux = train_fn["train3_D_match"](P, discriminator_single, opt,real_images,ugen_images)
         loss = ds_loss+ ds_aux['penalty']
 
@@ -383,8 +350,7 @@ def train(P, opt, train_fn, models, optimizers,
             #DP_state_dict = discriminator_pair.module.state_dict()
             DS_state_dict = discriminator_single.module.state_dict()
             Ge_state_dict = g_ema.state_dict()
-            #fid_value=my_fid_score(path_base='base_stats.npz', G=generator, size=images.size(0), batch_size=images.size(0), model=None, dims=192)#这里返回的应该就是实数吧？--是
-            #先不让fid_score来影响训练，只是单纯打印它
+            #fid_value=my_fid_score(path_base='base_stats.npz', G=generator, size=images.size(0), batch_size=images.size(0), model=None, dims=192)
             #metrics['fid_score'].append(fid_value)
             logger.log('[Steps %7d][fid_score %.7f]' %(step, metrics['fid_score'][-1]))
 
@@ -443,7 +409,6 @@ def worker(P):
         
 
     P.accum = 0.5 ** (options['batch_size'] / (P.halflife_k * 1000))
-    #-----加载模型结构---------
     from vit_generator_skip import vit_my_8
     resolution = image_size[0]
     generator = vit_my_8(patch_size=16)
@@ -483,13 +448,8 @@ def worker(P):
 
     for name, param in generator.named_parameters():
         if "cls_token" in name or "pos_embed" in name or "style." in name or "blocks." in name or "norm." in name:
-            param.requires_grad=False
-            #print(f"层名分别为{name}") 
+            param.requires_grad=False 
     G_optimizer = optim.Adam(filter(lambda p: p.requires_grad, generator.parameters()),lr=options["lr"], betas=options["beta"]) 
-    # G_optimizer = optim.Adam(generator.parameters(),
-    #                          lr=options["lr"], betas=options["beta"])
-    # D_optimizer_pair = optim.Adam(discriminator_pair.parameters(),
-    #                          lr=options["lr_d"], betas=options["beta"])
     D_optimizer_single = optim.Adam(discriminator_single.parameters(),
                              lr=options["lr_d"], betas=options["beta"])
 
@@ -540,8 +500,7 @@ def worker(P):
     if P.finetune:
         logger.log(f"Checkpoint loaded from '{P.finetune}'")
 
-#augment_fn是从这里来的！！！！我们的P.aug是diffaug，DiffAugment使我们对生成的样本采用可微增广，有效地稳定了训练，并使其收敛得更好。
-#以防止Discriminator直接记住真实的数据集
+
 
     P.augment_fn = get_augment(mode=P.aug).cuda()
     generator = nn.DataParallel(generator)
