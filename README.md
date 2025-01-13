@@ -3,9 +3,11 @@
 ## Dataset
 RC500: https://drive.google.com/file/d/1x3tZmPw0IS9fxoKXel4xGT38nK8zd9hR/view?usp=sharing  
 
-Notably, the test set used for the ablation experiments use an additional 200 images to better verify the role of each component. 
+We randomly selected 50 from 583 test images as the test set for comparative experiments:
 
 test_dataset: https://drive.google.com/file/d/1Y3_4tuNcGbzj5bYr2JWhniVvm6W6J-Gb/view?usp=drive_link  
+
+Notably, we also selected 250 images from the 583 test images as the test set for ablation experiments to better verify the role of each component.
 
 original_images: https://drive.google.com/file/d/1i9hv2yrG8cImo7In3KUiFnusn7GNC-7e/view?usp=drive_link  
 ## Experimental details
